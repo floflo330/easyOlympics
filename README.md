@@ -1,6 +1,6 @@
-#L'application des Jeux Olympiques
+# L'application des Jeux Olympiques
 
-###Mock-ups de l'application Java
+### Mock-ups de l'application Java
 
 
 ![WhatsApp Image 2024-04-17 à 00 35 46_1c06b481](https://github.com/floflo330/easyOlympics/assets/83714707/cd5fb52e-36a0-4c7c-b47e-4e19816fd48f)
