@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="531.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Login">
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Login">
     <children>
-        <AnchorPane layoutY="59.0" prefHeight="474.0" prefWidth="776.0">
+        <AnchorPane layoutY="58.0">
          <children>
-            <Text layoutX="14.0" layoutY="68.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="CONNEXION" wrappingWidth="158.7265625">
+            <Text layoutX="15.0" layoutY="69.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="CONNEXION" wrappingWidth="200.0">
                <font>
                   <Font size="39.0" />
                </font>
@@ -36,5 +37,10 @@
             </children>
         </Pane>
       <Button layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
+      <ImageView fitHeight="59.0" fitWidth="43.0" layoutX="713.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/logojo.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
