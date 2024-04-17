@@ -1,17 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="531.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Login">
     <children>
-        <AnchorPane layoutX="248.0" layoutY="133.0" prefHeight="266.0" prefWidth="280.0" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="59.0" stroke="BLACK" strokeType="INSIDE" width="776.0" />
-        <Pane layoutX="68.0" layoutY="15.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #f0ffff; -fx-background-radius: 10; -fx-padding: 10;">
+        <AnchorPane layoutY="59.0" prefHeight="474.0" prefWidth="776.0">
+         <children>
+            <Text layoutX="14.0" layoutY="68.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="CONNEXION" wrappingWidth="158.7265625">
+               <font>
+                  <Font size="39.0" />
+               </font>
+            </Text>
+            <Text layoutX="301.0" layoutY="178.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="EMAIL :" wrappingWidth="158.7265625">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <TextField layoutX="298.0" layoutY="190.0" prefHeight="30.0" prefWidth="180.0" />
+            <Text layoutX="301.0" layoutY="243.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="MOT DE PASSE : " wrappingWidth="158.7265625">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Line endX="630.0" layoutX="115.0" layoutY="88.0" startX="-100.0" />
+            <Button layoutX="392.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #bf154e; -fx-background-radius: 12; -fx-border-style: none;" text="Se connecter" textAlignment="CENTER" textFill="WHITE" />
+            <PasswordField layoutX="298.0" layoutY="257.0" prefHeight="30.0" prefWidth="180.0" />
+         </children></AnchorPane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bf154e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="776.0" />
+        <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
             <children>
-                <Text stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Administration" />
+                <Text layoutX="8.0" layoutY="20.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Administration" />
             </children>
         </Pane>
+      <Button layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
     </children>
 </AnchorPane>
