@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Lemon Milk Bold';
+    src: url('../fonts/LEMONMILK-Bold.otf"');
+}
+@font-face {
+    font-family: 'Lemon Milk Bold Italic';
+    src: url('../fonts/LEMONMILK-BoldItalic.otf"');
+}
+@font-face {
+    font-family: 'Lemon Milk Light';
+    src: url('../fonts/LEMONMILK-Light.otf"');
+}
+@font-face {
+    font-family: 'Lemon Milk Light Italic';
+    src: url('../fonts/LEMONMILK-LightItalic.otf"');
+}
+@font-face {
+    font-family: 'Lemon Milk Medium';
+    src: url('../fonts/LEMONMILK-Medium.otf"');
+}
+@font-face {
+    font-family: 'Lemon Milk Medium Italic';
+    src: url('../fonts/LEMONMILK-MediumItalic.otf"');
+}
+@font-face {
+    font-family: 'Lemon Milk Regular';
+    src: url('../fonts/LEMONMILK-Regular.otf"');
+}
+@font-face {
+    font-family: 'Lemon Milk Regular Italic';
+    src: url('../fonts/LEMONMILK-RegularItalic.otf"');
+}
