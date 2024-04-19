@@ -31,8 +31,7 @@
     src: url('../fonts/LEMONMILK-RegularItalic.otf');
 }
 
-
-#test .text{
+#test {
     -fx-font-size: 6em;
     -fx-font-family: "Lemon Milk Regular";
 }
