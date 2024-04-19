@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Login">
     <children>
-        <AnchorPane layoutY="58.0">
+        <AnchorPane layoutY="58.0" prefHeight="405.0" prefWidth="776.0">
          <children>
             <Text layoutX="15.0" layoutY="69.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="CONNEXION" wrappingWidth="200.0">
                <font>
