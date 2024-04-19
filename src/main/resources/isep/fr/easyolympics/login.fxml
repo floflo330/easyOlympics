@@ -6,9 +6,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Login">
+<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Login">
     <children>
-        <AnchorPane layoutY="58.0" prefHeight="762.0" prefWidth="1227.0">
+        <AnchorPane layoutY="58.0" prefHeight="762.0" prefWidth="1227.0" stylesheets="@styles/style.css">
          <children>
             <Text layoutX="15.0" layoutY="69.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="CONNEXION" wrappingWidth="200.0">
                <font>
@@ -33,7 +33,7 @@
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bf154e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
         <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
             <children>
-                <Text layoutX="8.0" layoutY="20.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Administration" />
+                <Text fx:id="test" layoutX="8.0" layoutY="20.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-family: Lemon Milk Bold;" text="Administration" />
             </children>
         </Pane>
       <Button layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />

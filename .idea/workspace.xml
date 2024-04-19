@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Added img">
+    <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modifier CSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +104,7 @@
       <workItem from="1713357980304" duration="2590000" />
       <workItem from="1713363110592" duration="5646000" />
       <workItem from="1713369322994" duration="1313000" />
-      <workItem from="1713508773675" duration="4339000" />
+      <workItem from="1713508773675" duration="6788000" />
     </task>
     <task id="LOCAL-00001" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -185,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713513028684</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Modifier CSS">
+      <option name="closed" value="true" />
+      <created>1713514140794</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713514140794</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +215,8 @@
     <MESSAGE value="Add login.fxml" />
     <MESSAGE value="Modification layout" />
     <MESSAGE value="Added img" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added img" />
+    <MESSAGE value="Modifier CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifier CSS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
