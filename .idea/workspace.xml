@@ -98,6 +98,7 @@
       <workItem from="1713357980304" duration="2590000" />
       <workItem from="1713363110592" duration="5646000" />
       <workItem from="1713369322994" duration="1313000" />
+      <workItem from="1713508773675" duration="2857000" />
     </task>
     <task id="LOCAL-00001" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -139,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713368772533</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added img">
+      <option name="closed" value="true" />
+      <created>1713509066310</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713509066310</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added img">
+      <option name="closed" value="true" />
+      <created>1713509234818</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713509234818</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
