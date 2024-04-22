@@ -78,3 +78,8 @@
     -fx-min-width: 40;
     -fx-min-height: 40;
 }
+
+.navbar-blue{
+    -fx-background-color: linear-gradient(to right, #0E3A53, #15ABA7);
+
+}

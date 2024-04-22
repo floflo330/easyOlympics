@@ -22,7 +22,7 @@ public class Login extends Application {
 
         primaryStage.setTitle("EasyOlympics - Connexion");
 
-//        primaryStage.getIcons().add(new Image(Login.class.getResourceAsStream("/img/logojo.png")));
+        primaryStage.getIcons().add(new Image(Login.class.getResourceAsStream("img/logojo.png")));
 
         primaryStage.show();
     }
