@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modifier CSS">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/fonts/LemonMilk.otf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +67,7 @@
       <recent name="isep.fr.easyolympics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\flore\IdeaProjects\easyOlympics\src\main\java\isep\fr\easyolympics" />
       <recent name="C:\Users\flore\IdeaProjects\easyOlympics\src\main\resources\isep\fr\easyolympics\fonts" />
       <recent name="C:\Users\flore\IdeaProjects\easyOlympics\src\main\resources\isep\fr\easyolympics" />
       <recent name="C:\Users\flore\IdeaProjects\easyOlympics\src\main\resources\fonts" />
@@ -116,7 +114,7 @@
       <workItem from="1713369322994" duration="1313000" />
       <workItem from="1713508773675" duration="8779000" />
       <workItem from="1713519616415" duration="847000" />
-      <workItem from="1713773130317" duration="3016000" />
+      <workItem from="1713773130317" duration="5015000" />
     </task>
     <task id="LOCAL-00001" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -222,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713517982841</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Modifier CSS">
+      <option name="closed" value="true" />
+      <created>1713777950215</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713777950217</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
