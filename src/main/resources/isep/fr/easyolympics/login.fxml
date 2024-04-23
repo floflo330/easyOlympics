@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Login">
+<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.controller.Login">
     <children>
         <AnchorPane layoutY="58.0" prefHeight="762.0" prefWidth="1227.0" stylesheets="@styles/style.css">
          <children>

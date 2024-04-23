@@ -6,13 +6,13 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Home">
+<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.controller.Home">
     <children>
       <ScrollPane layoutY="62.0" prefHeight="750.0" prefWidth="1227.0">
          <content>
               <AnchorPane prefHeight="762.0" prefWidth="1227.0" stylesheets="@styles/style.css">
                   <children>
-                      <Text layoutX="15.0" layoutY="69.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="CONNEXION" wrappingWidth="200.0">
+                      <Text layoutX="15.0" layoutY="65.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="Bonjour User !" wrappingWidth="314.0">
                           <font>
                               <Font name="LEMON MILK Regular" size="39.0" />
                           </font>

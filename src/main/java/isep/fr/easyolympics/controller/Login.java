@@ -1,4 +1,4 @@
-package isep.fr.easyolympics;
+package isep.fr.easyolympics.controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
