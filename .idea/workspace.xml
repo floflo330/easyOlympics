@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/TestDatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/controller/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/TestDatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/TestDatabaseConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +139,7 @@
       <workItem from="1713789873339" duration="304000" />
       <workItem from="1713790200078" duration="377000" />
       <workItem from="1713790624307" duration="597000" />
-      <workItem from="1713862211010" duration="5514000" />
+      <workItem from="1713862211010" duration="6847000" />
     </task>
     <task id="LOCAL-00001" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -293,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713790313506</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1713876539713</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1713876539713</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
