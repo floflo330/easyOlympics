@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Signup">
+    <children>
+        <AnchorPane layoutY="45.0" prefHeight="762.0" prefWidth="1227.0" stylesheets="@styles/style.css">
+            <children>
+            <Separator layoutX="275.0" layoutY="170.0" orientation="VERTICAL" prefHeight="361.0" prefWidth="699.0" />
+                <Text layoutX="15.0" layoutY="72.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="Inscription" wrappingWidth="237.0">
+                    <font>
+                        <Font name="LEMON MILK Regular" size="39.0" />
+                    </font>
+                </Text>
+                <Text fontSmoothingType="LCD" layoutX="318.0" layoutY="201.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Email :" wrappingWidth="158.7265625">
+                    <font>
+                        <Font name="LEMON MILK Bold" size="17.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="emailField" layoutX="315.0" layoutY="214.0" prefHeight="30.0" prefWidth="217.0" />
+                <Text layoutX="318.0" layoutY="291.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Mot de passe :" wrappingWidth="158.7265625">
+                    <font>
+                        <Font name="LEMON MILK Bold" size="17.0" />
+                    </font>
+                </Text>
+                <Line endX="1066.0" layoutX="115.0" layoutY="88.0" startX="-100.0" />
+                <Button layoutX="559.0" layoutY="576.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #9F254E; -fx-background-radius: 12; -fx-border-style: none;" text="Inscription" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="LEMON MILK Regular" size="12.0" />
+               </font></Button>
+                <PasswordField fx:id="passwordField" layoutX="315.0" layoutY="305.0" prefHeight="30.0" prefWidth="217.0" />
+            <Text layoutX="493.0" layoutY="378.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" wrappingWidth="158.7265625">
+               <font>
+                  <Font name="LEMON MILK Bold" size="17.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="passwordField1" layoutX="315.0" layoutY="391.0" prefHeight="30.0" prefWidth="217.0" />
+            <Text layoutX="315.0" layoutY="376.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Nom : " wrappingWidth="158.7265625">
+               <font>
+                  <Font name="LEMON MILK Bold" size="17.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="passwordField11" layoutX="315.0" layoutY="470.0" prefHeight="30.0" prefWidth="217.0" />
+            <Text layoutX="315.0" layoutY="458.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Prénom : " wrappingWidth="158.7265625">
+               <font>
+                  <Font name="LEMON MILK Bold" size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="721.0" layoutY="339.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Pays : " wrappingWidth="158.7265625">
+               <font>
+                  <Font name="LEMON MILK Bold" size="17.0" />
+               </font>
+            </Text>
+            <CheckBox layoutX="720.0" layoutY="276.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Je suis un administrateur">
+               <font>
+                  <Font name="LEMON MILK Regular" size="12.0" />
+               </font>
+            </CheckBox>
+            <ChoiceBox layoutX="721.0" layoutY="356.0" prefHeight="40.0" prefWidth="217.0" />
+            <Text layoutX="721.0" layoutY="421.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Sport : " wrappingWidth="158.7265625">
+               <font>
+                  <Font name="LEMON MILK Bold" size="17.0" />
+               </font>
+            </Text>
+            <ChoiceBox layoutX="721.0" layoutY="438.0" prefHeight="40.0" prefWidth="217.0" />
+            <RadioButton layoutX="720.0" layoutY="226.0" mnemonicParsing="false" text="Homme">
+               <font>
+                  <Font name="LEMON MILK Regular" size="12.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="829.0" layoutY="226.0" mnemonicParsing="false" text="Femme">
+               <font>
+                  <Font name="LEMON MILK Regular" size="12.0" />
+               </font>
+            </RadioButton>
+            <Text fontSmoothingType="LCD" layoutX="720.0" layoutY="201.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Sexe :" wrappingWidth="158.7265625">
+               <font>
+                  <Font name="LEMON MILK Bold" size="17.0" />
+               </font>
+            </Text>
+            </children></AnchorPane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9f254e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
+        <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
+            <children>
+                <Text id="labelNomPage" fx:id="labelNomPage" layoutX="8.0" layoutY="20.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Administration">
+                    <font>
+                        <Font name="Lemon/Milk" size="12.0" />
+                    </font></Text>
+            </children>
+        </Pane>
+        <Button layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
+        <ImageView fitHeight="59.0" fitWidth="43.0" layoutX="1170.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/logojo.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

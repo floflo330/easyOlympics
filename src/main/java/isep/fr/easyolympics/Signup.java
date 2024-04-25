@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
-public class Login extends Application {
+public class Signup extends Application {
 
     public Text labelNomPage;
     public TextField emailField;
@@ -23,13 +23,13 @@ public class Login extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("signup.fxml"));
 
         Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
 
-        primaryStage.setTitle("EasyOlympics - Connexion");
+        primaryStage.setTitle("EasyOlympics - Incription");
 
         primaryStage.getIcons().add(new Image(Login.class.getResourceAsStream("img/logojo.png")));
 
