@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.controller.Login">
+<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Login">
     <children>
         <AnchorPane layoutY="58.0" prefHeight="762.0" prefWidth="1227.0" stylesheets="@styles/style.css">
          <children>
@@ -20,16 +20,16 @@
                   <Font name="LEMON MILK Bold" size="17.0" />
                </font>
             </Text>
-            <TextField layoutX="490.0" layoutY="330.0" prefHeight="30.0" prefWidth="217.0" />
+            <TextField fx:id="emailField" layoutX="490.0" layoutY="330.0" prefHeight="30.0" prefWidth="217.0" />
             <Text layoutX="493.0" layoutY="408.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="MOT DE PASSE : " wrappingWidth="158.7265625">
                <font>
                   <Font name="LEMON MILK Bold" size="17.0" />
                </font>
             </Text>
             <Line endX="1066.0" layoutX="115.0" layoutY="88.0" startX="-100.0" />
-            <Button layoutX="576.0" layoutY="491.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #bf154e; -fx-background-radius: 12; -fx-border-style: none;" text="Se connecter" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="576.0" layoutY="491.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #bf154e; -fx-background-radius: 12; -fx-border-style: none;" text="Se connecter" textAlignment="CENTER" textFill="WHITE" onAction="#handleLogin">
                </Button>
-            <PasswordField layoutX="490.0" layoutY="422.0" prefHeight="30.0" prefWidth="217.0" />
+            <PasswordField fx:id="passwordField" layoutX="490.0" layoutY="422.0" prefHeight="30.0" prefWidth="217.0" />
          </children></AnchorPane>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bf154e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
         <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">

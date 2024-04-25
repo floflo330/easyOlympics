@@ -8,4 +8,6 @@ module isep.fr.easyolympics {
     exports isep.fr.easyolympics;
     exports isep.fr.easyolympics.controller;
     opens isep.fr.easyolympics.controller to javafx.fxml;
+    exports isep.fr.easyolympics.model;
+    opens isep.fr.easyolympics.model to javafx.fxml;
 }

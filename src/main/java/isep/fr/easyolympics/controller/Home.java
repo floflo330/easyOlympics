@@ -1,6 +1,6 @@
 package isep.fr.easyolympics.controller;
 
-import isep.fr.easyolympics.controller.Login;
+import isep.fr.easyolympics.Login;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
+      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminUserList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/controller/adminUserListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminUserList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_16_13_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_16_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/controller/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/controller/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/controller/Login.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/TestDatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/TestDatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +36,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/login.fxml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -44,28 +59,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Home.executor": "Run",
-    "Application.Login.executor": "Run",
-    "Application.TestDatabaseConnection.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/flore/IdeaProjects/easyOlympics/src/main/resources/isep/fr/easyolympics",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Home.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Login.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestDatabaseConnection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.adminUserList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.isep.fr.easyolympics.controller.adminUserList.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/flore/IdeaProjects/easyOlympics/src/main/resources/isep/fr/easyolympics&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="isep.fr.easyolympics" />
@@ -77,14 +98,30 @@
       <recent name="C:\Users\flore\IdeaProjects\easyOlympics\src\main\resources\fonts" />
       <recent name="C:\Users\flore\IdeaProjects\easyOlympics\src\main\resources\img" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="isep.fr.easyolympics" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Login">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.HelloApplication" />
+      <module name="easyOlympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="isep.fr.easyolympics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.controller.Home" />
       <module name="easyOlympics" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="isep.fr.easyolympics.controller.*" />
+          <option name="PATTERN" value="isep.fr.easyolympics.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,11 +130,50 @@
       </method>
     </configuration>
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.controller.Login" />
+      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.Login" />
       <module name="easyOlympics" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="isep.fr.easyolympics.controller.*" />
+          <option name="PATTERN" value="isep.fr.easyolympics.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="adminUserList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.adminUserList" />
+      <module name="easyOlympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="isep.fr.easyolympics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="adminUserList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.adminUserList" />
+      <module name="easyOlympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="isep.fr.easyolympics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="adminUserList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.adminUserList" />
+      <module name="easyOlympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="isep.fr.easyolympics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,6 +184,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Login" />
+        <item itemvalue="Application.adminUserList" />
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.Home" />
       </list>
     </recent_temporary>
@@ -139,7 +217,11 @@
       <workItem from="1713789873339" duration="304000" />
       <workItem from="1713790200078" duration="377000" />
       <workItem from="1713790624307" duration="597000" />
-      <workItem from="1713862211010" duration="6847000" />
+      <workItem from="1713862211010" duration="11551000" />
+      <workItem from="1713948972729" duration="885000" />
+      <workItem from="1713959855836" duration="6056000" />
+      <workItem from="1713997584506" duration="89000" />
+      <workItem from="1714051783806" duration="1537000" />
     </task>
     <task id="LOCAL-00001" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -293,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713876539713</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1713877849131</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1713877849131</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,5 +409,15 @@
     <MESSAGE value="Ajout Home" />
     <MESSAGE value="Modif" />
     <option name="LAST_COMMIT_MESSAGE" value="Modif" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
