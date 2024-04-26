@@ -6,6 +6,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,7 +19,7 @@
 
 <AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Signup">
     <children>
-        <AnchorPane layoutY="45.0" prefHeight="762.0" prefWidth="1227.0" stylesheets="@styles/style.css">
+        <AnchorPane layoutY="59.0" prefHeight="748.0" prefWidth="1227.0" stylesheets="@styles/style.css">
             <children>
             <Separator layoutX="275.0" layoutY="170.0" orientation="VERTICAL" prefHeight="361.0" prefWidth="699.0" />
                 <Text layoutX="15.0" layoutY="72.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="Inscription" wrappingWidth="237.0">
@@ -60,29 +61,29 @@
                   <Font name="LEMON MILK Bold" size="17.0" />
                </font>
             </Text>
-            <Text layoutX="721.0" layoutY="339.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Pays : " wrappingWidth="158.7265625">
+            <Text layoutX="722.0" layoutY="379.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Pays : " wrappingWidth="158.7265625">
                <font>
                   <Font name="LEMON MILK Bold" size="17.0" />
                </font>
             </Text>
-            <CheckBox layoutX="720.0" layoutY="276.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Je suis un administrateur">
+            <CheckBox layoutX="720.0" layoutY="337.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Je suis un administrateur">
                <font>
                   <Font name="LEMON MILK Regular" size="12.0" />
                </font>
             </CheckBox>
-            <ChoiceBox layoutX="721.0" layoutY="356.0" prefHeight="40.0" prefWidth="217.0" />
-            <Text layoutX="721.0" layoutY="421.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Sport : " wrappingWidth="158.7265625">
+            <ChoiceBox layoutX="721.0" layoutY="393.0" prefHeight="40.0" prefWidth="217.0" />
+            <Text layoutX="720.0" layoutY="461.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Sport : " wrappingWidth="158.7265625">
                <font>
                   <Font name="LEMON MILK Bold" size="17.0" />
                </font>
             </Text>
-            <ChoiceBox layoutX="721.0" layoutY="438.0" prefHeight="40.0" prefWidth="217.0" />
-            <RadioButton layoutX="720.0" layoutY="226.0" mnemonicParsing="false" text="Homme">
+            <ChoiceBox layoutX="721.0" layoutY="475.0" prefHeight="40.0" prefWidth="217.0" />
+            <RadioButton layoutX="720.0" layoutY="214.0" mnemonicParsing="false" text="Homme">
                <font>
                   <Font name="LEMON MILK Regular" size="12.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="829.0" layoutY="226.0" mnemonicParsing="false" text="Femme">
+            <RadioButton layoutX="829.0" layoutY="214.0" mnemonicParsing="false" text="Femme">
                <font>
                   <Font name="LEMON MILK Regular" size="12.0" />
                </font>
@@ -92,6 +93,12 @@
                   <Font name="LEMON MILK Bold" size="17.0" />
                </font>
             </Text>
+            <Text layoutX="720.0" layoutY="260.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" text="Age :" wrappingWidth="158.7265625">
+               <font>
+                  <Font name="LEMON MILK Bold" size="17.0" />
+               </font>
+            </Text>
+            <Spinner editable="true" layoutX="722.0" layoutY="284.0" prefHeight="29.0" prefWidth="217.0" />
             </children></AnchorPane>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9f254e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
         <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
