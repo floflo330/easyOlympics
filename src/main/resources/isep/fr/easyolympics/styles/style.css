@@ -57,13 +57,44 @@
 -fx-min-height: 40px;
 -fx-max-width: 40px;
 -fx-max-height: 40px;
--fx-background-color: #4CAF50;
+-fx-background-color: #b8bfbe;
 -fx-border-color: transparent;
 -fx-text-fill: white;
--fx-font-size: 11;
+-fx-font-size: 13;
 -fx-font-family: "Lemon Milk Regular";
+-fx-background-radius: 3;
+}
+
+
+.boutonCarreBEAU {
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-background-color: #1E7217;
+    -fx-border-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 13;
+    -fx-font-family: "Lemon Milk Regular";
+    -fx-background-radius: 3;
+}
+
+.boutonCarreinutile {
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-border-radius: 3;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+    -fx-font-size: 13;
+    -fx-font-family: "Lemon Milk Regular";
+    -fx-border-width: solid 1px;
+    -fx-border-color: #4a4848;
 
 }
+
+
 
 
 .button:hover{
