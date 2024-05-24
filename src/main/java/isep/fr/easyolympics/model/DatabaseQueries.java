@@ -25,7 +25,7 @@ public class DatabaseQueries {
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                int id = rs.getInt("id");
+                int id = rs.getInt("idUser");
                 String username = rs.getString("username");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
@@ -52,7 +52,7 @@ public class DatabaseQueries {
 
         try {
             conn = Database.getConnection();
-            String query = "SELECT * FROM users WHERE id = ?";
+            String query = "SELECT * FROM users WHERE idUser = ?";
             stmt = conn.prepareStatement(query);
             stmt.setInt(1, userId);
             rs = stmt.executeQuery();
@@ -90,7 +90,7 @@ public class DatabaseQueries {
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-                int id = rs.getInt("userId");
+                int id = rs.getInt("idUser");
                 String username = rs.getString("name");
                 // Récupérez d'autres colonnes si nécessaire
                 user = new User(id, username, email, password);
