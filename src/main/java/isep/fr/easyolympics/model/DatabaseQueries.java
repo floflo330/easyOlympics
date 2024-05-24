@@ -2,10 +2,13 @@ package isep.fr.easyolympics.model;
 import isep.fr.easyolympics.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import javafx.fxml.FXMLLoader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DatabaseQueries {
     // Méthode pour récupérer tous les utilisateurs
@@ -100,6 +103,50 @@ public class DatabaseQueries {
 
         return user;
     }
+    public static Map<String, Map<String, Integer>> getMedalsByCountries() throws SQLException {
+        Map<String, Map<String, Integer>> medalsByCountry = new HashMap<>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "SELECT\n" +
+                    "    c.name AS country_name,\n" +
+                    "    SUM(CASE WHEN m.rank = 1 THEN 1 ELSE 0 END) AS gold_count,\n" +
+                    "    SUM(CASE WHEN m.rank = 2 THEN 1 ELSE 0 END) AS silver_count,\n" +
+                    "    SUM(CASE WHEN m.rank = 3 THEN 1 ELSE 0 END) AS bronze_count\n" +
+                    "FROM\n" +
+                    "    medals m\n" +
+                    "INNER JOIN\n" +
+                    "    countries c ON m.country = c.idCountry\n" +
+                    "GROUP BY\n" +
+                    "    m.country;\n";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String countryName = rs.getString("country_name");
+                int goldCount = rs.getInt("gold_count");
+                int silverCount = rs.getInt("silver_count");
+                int bronzeCount = rs.getInt("bronze_count");
+
+                Map<String, Integer> countryMedals = new HashMap<>();
+                countryMedals.put("gold", goldCount);
+                countryMedals.put("silver", silverCount);
+                countryMedals.put("bronze", bronzeCount);
+
+                medalsByCountry.put(countryName, countryMedals);
+            }
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+
+        return medalsByCountry;
+    }
+
 
 
 }
