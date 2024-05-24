@@ -52,6 +52,20 @@
 
 }
 
+.boutonCarre {
+-fx-min-width: 40px;
+-fx-min-height: 40px;
+-fx-max-width: 40px;
+-fx-max-height: 40px;
+-fx-background-color: #4CAF50;
+-fx-border-color: transparent;
+-fx-text-fill: white;
+-fx-font-size: 11;
+-fx-font-family: "Lemon Milk Regular";
+
+}
+
+
 .button:hover{
     -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
