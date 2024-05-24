@@ -93,6 +93,13 @@
     -fx-min-height: 40;
 }
 
+.text-field{
+    -fx-font-family: "Lemon Milk Regular";
+    -fx-font-size: 14;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+}
+
 .navbar-blue{
     -fx-background-color: linear-gradient(to right, #0E3A53, #15ABA7);
 
