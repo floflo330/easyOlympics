@@ -14,8 +14,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
-        //showHomeScene();
-        showAdminUserList();
+        showHomeScene();
+        //showAdminUserList();
     }
 
     public static void showLoginScene() throws Exception {

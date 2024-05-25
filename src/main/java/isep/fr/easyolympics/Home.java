@@ -1,5 +1,6 @@
 package isep.fr.easyolympics;
 
+import isep.fr.easyolympics.model.DatabaseQueries;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -9,13 +10,17 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import javafx.scene.control.ListView;
 
 public class Home implements Initializable {
 
     @FXML
     private Button menuButton;
-
+    private ListView<String> userList;
     private ContextMenu contextMenu;
 
     @Override
@@ -54,10 +59,21 @@ public class Home implements Initializable {
 
         contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, calendarItem);
 
+        try {
+            List<String> athletes = DatabaseQueries.getAthletes();
+            userList.getItems().addAll(athletes);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Vous pouvez également afficher un message d'erreur à l'utilisateur ici
+        }
+
+
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (event.getButton() == MouseButton.PRIMARY) {
                 contextMenu.show(menuButton, event.getScreenX(), event.getScreenY());
             }
         });
     }
+
+
 }
