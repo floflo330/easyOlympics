@@ -176,7 +176,7 @@
                   <Font name="LEMON MILK Regular" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="590.0" layoutY="689.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Je veux etre avertis des prochains évènements !" textAlignment="CENTER" wrappingWidth="573.7999877929688">
+            <Text layoutX="598.0" layoutY="689.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Je veux etre avertis des prochains évènements !" textAlignment="CENTER" wrappingWidth="573.7999877929688">
                <font>
                   <Font name="LEMON MILK Regular" size="11.0" />
                </font>
