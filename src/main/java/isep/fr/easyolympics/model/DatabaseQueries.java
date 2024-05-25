@@ -179,5 +179,31 @@ public class DatabaseQueries {
 
         return athletes;
     }
+    public static List<String> getSports() throws SQLException {
+        List<String> sports = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "SELECT name FROM sports";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String sport = rs.getString("name");
+                sports.add(sport);
+            }
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+
+        return sports;
+    }
 
 }
+
+
