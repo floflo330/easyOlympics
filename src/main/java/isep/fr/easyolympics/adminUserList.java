@@ -13,18 +13,13 @@ import javafx.stage.Stage;
 import isep.fr.easyolympics.model.TestDatabaseConnection;
 
 import java.io.IOException;
-
 public class adminUserList extends Application {
 
     public TextFlow userListTextArea;
 
-    @FXML
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(adminUserList.class.getResource("adminUserList.fxml"));
-
-        initialize();
 
         Scene scene = new Scene(root);
 
@@ -32,17 +27,24 @@ public class adminUserList extends Application {
         primaryStage.setTitle("EasyOlympics - Administration");
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("img/logojo.png")));
         primaryStage.show();
+
+        initialize();
     }
 
-    @FXML
     public void initialize() {
-//        String userList = TestDatabaseConnection.getUserListAsString();
-        String userList = "Oui";
+        // Assurez-vous que userListTextArea n'est pas null avant d'ajouter du texte
+        if (userListTextArea != null) {
+            // Obtenir la liste des utilisateurs depuis la base de données
+            String userList = "Oui";
 
-        Text text = new Text(userList);
+            // Créer un nouveau Text pour afficher la liste des utilisateurs
+            Text text = new Text(userList);
 
-        userListTextArea.getChildren().add(text);
+            // Ajouter le texte au TextFlow
+            userListTextArea.getChildren().add(text);
+        }
     }
+
     public static void main(String[] args) {
         launch(args);
     }
