@@ -5,43 +5,39 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import isep.fr.easyolympics.model.TestDatabaseConnection;
+import isep.fr.easyolympics.model.DatabaseQueries;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
 public class adminUserList extends Application {
 
-    public TextFlow userListTextArea;
+    @FXML
+    private ListView<String> userList;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(adminUserList.class.getResource("adminUserList.fxml"));
-
         Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("EasyOlympics - Administration");
+        primaryStage.setTitle("EasyOlympics - Liste des Athletes");
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("img/logojo.png")));
         primaryStage.show();
-
-        initialize();
     }
 
+    @FXML
     public void initialize() {
-        // Assurez-vous que userListTextArea n'est pas null avant d'ajouter du texte
-        if (userListTextArea != null) {
-            // Obtenir la liste des utilisateurs depuis la base de données
-            String userList = "Oui";
-
-            // Créer un nouveau Text pour afficher la liste des utilisateurs
-            Text text = new Text(userList);
-
-            // Ajouter le texte au TextFlow
-            userListTextArea.getChildren().add(text);
+        try {
+            List<String> athletes = DatabaseQueries.getAthletes();
+            userList.getItems().addAll(athletes);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Vous pouvez également afficher un message d'erreur à l'utilisateur ici
         }
     }
 

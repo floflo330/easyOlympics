@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
-      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/menu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/countryResults.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/countryResults.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminUserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminUserList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminUserList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminUserList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/calendar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/calendar.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +239,7 @@
       <workItem from="1714114436893" duration="3462000" />
       <workItem from="1716535393835" duration="9030000" />
       <workItem from="1716559778264" duration="2655000" />
-      <workItem from="1716630574822" duration="5297000" />
+      <workItem from="1716630574822" duration="9267000" />
     </task>
     <task id="LOCAL-00001" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -504,7 +505,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716632309732</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716640317535</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1716640317535</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716640715985</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1716640715985</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

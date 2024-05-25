@@ -147,6 +147,37 @@ public class DatabaseQueries {
         return medalsByCountry;
     }
 
+    public static List<String> getAthletes() throws SQLException {
+        List<String> athletes = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
 
+        try {
+            conn = Database.getConnection();
+            String query = "SELECT a.name, a.surname, a.email, c.name as country, s.name as sport " +
+                    "FROM athletes a " +
+                    "JOIN countries c ON a.idCountry = c.idCountry " +
+                    "JOIN sports s ON a.idSport = s.idSport";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String surname = rs.getString("surname");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                String sport = rs.getString("sport");
+                String athleteInfo = String.format("%s %s, Email: %s, Country: %s, Sport: %s", name, surname, email, country, sport);
+                athletes.add(athleteInfo);
+            }
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+
+        return athletes;
+    }
 
 }
