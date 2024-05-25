@@ -14,7 +14,7 @@ public class Calendar extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("calendar.fxml"));
 
         // Créer une scène
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 1200, 800);
 
         // Configurer la scène et afficher la fenêtre
         primaryStage.setTitle("Mon Calendrier");
