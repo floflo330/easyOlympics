@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Home implements Initializable {
+public class Menu implements Initializable {
 
     @FXML
     private Button menuButton;
@@ -24,7 +24,6 @@ public class Home implements Initializable {
 
         MenuItem homeItem = new MenuItem("Accueil");
         homeItem.setOnAction(event -> {
-            // Action pour aller à la page d'accueil
             try {
                 Main.showHomeScene();
             } catch (Exception e) {
@@ -40,8 +39,11 @@ public class Home implements Initializable {
 
         MenuItem logoutItem = new MenuItem("Déconnexion");
         logoutItem.setOnAction(event -> {
-            // Action pour se déconnecter
-            // Par exemple : Main.showLoginScene();
+            try {
+                Main.showLoginScene();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
 
         contextMenu.getItems().addAll(homeItem, profileItem, logoutItem);
