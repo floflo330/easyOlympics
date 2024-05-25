@@ -32,19 +32,28 @@ public class Home implements Initializable {
             }
         });
 
-        MenuItem profileItem = new MenuItem("Profil");
+        MenuItem profileItem = new MenuItem("Gestion des Athletes");
         profileItem.setOnAction(event -> {
             // Action pour aller à la page de profil
             // Par exemple : Main.showProfileScene();
         });
 
-        MenuItem logoutItem = new MenuItem("Déconnexion");
+        MenuItem logoutItem = new MenuItem("Gestion des évènements");
         logoutItem.setOnAction(event -> {
             // Action pour se déconnecter
             // Par exemple : Main.showLoginScene();
         });
 
-        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem);
+        MenuItem calendarItem = new MenuItem("Calendrier");
+        logoutItem.setOnAction(event -> {
+            try {
+                Main.showCalendar();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, calendarItem);
 
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (event.getButton() == MouseButton.PRIMARY) {

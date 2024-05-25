@@ -35,6 +35,16 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    public static void showCalendar() throws Exception {
+        Parent root = FXMLLoader.load(Main.class.getResource("calendar.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("EasyOlympics - Calendrier");
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
+        primaryStage.show();
+    }
+
+
     public static void main(String[] args) {
         launch(args);
     }
