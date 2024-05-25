@@ -33,8 +33,11 @@ public class Home implements Initializable {
 
         MenuItem profileItem = new MenuItem("Gestion des Athletes");
         profileItem.setOnAction(event -> {
-            // Action pour aller à la page de profil
-            // Par exemple : Main.showProfileScene();
+            try {
+                Main.showAdminUserList();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
 
         MenuItem logoutItem = new MenuItem("Gestion des évènements");
