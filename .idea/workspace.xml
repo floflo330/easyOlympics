@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif" />
+    <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
+      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/controller/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/home.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +55,7 @@
     "Application.HelloApplication.executor": "Run",
     "Application.Home.executor": "Run",
     "Application.Login.executor": "Run",
+    "Application.Main.executor": "Run",
     "Application.Signup.executor": "Run",
     "Application.TestDatabaseConnection.executor": "Run",
     "Application.adminUserList.executor": "Run",
@@ -93,7 +99,7 @@
       <recent name="isep.fr.easyolympics" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="CountryResults" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.CountryResults" />
       <module name="easyOlympics" />
@@ -107,8 +113,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.HelloApplication" />
+    <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.Home" />
       <module name="easyOlympics" />
       <extension name="coverage">
         <pattern>
@@ -120,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.Login" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="isep.fr.easyolympics.Main" />
       <module name="easyOlympics" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="isep.fr.easyolympics.model.*" />
+          <option name="PATTERN" value="isep.fr.easyolympics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -187,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Login" />
-        <item itemvalue="Application.CountryResults" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Home" />
         <item itemvalue="Application.Signup" />
         <item itemvalue="Application.adminUserList" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.CountryResults" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +234,9 @@
       <workItem from="1713997584506" duration="89000" />
       <workItem from="1714051783806" duration="4971000" />
       <workItem from="1714114436893" duration="3462000" />
-      <workItem from="1716535393835" duration="7058000" />
+      <workItem from="1716535393835" duration="9030000" />
+      <workItem from="1716559778264" duration="2655000" />
+      <workItem from="1716630574822" duration="1312000" />
     </task>
     <task id="LOCAL-00001" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -446,7 +454,47 @@
       <option name="project" value="LOCAL" />
       <updated>1716544076230</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716544121565</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1716544121565</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716545242513</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1716545242513</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716545720850</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1716545720850</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716546182220</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1716546182220</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716561803210</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1716561803210</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

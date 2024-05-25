@@ -1,4 +1,4 @@
-package isep.fr.easyolympics.controller;
+package isep.fr.easyolympics;
 
 import isep.fr.easyolympics.Login;
 import javafx.application.Application;
