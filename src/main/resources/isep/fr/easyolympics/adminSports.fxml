@@ -23,9 +23,9 @@
                     </font>
                 </Text>
                 <Line endX="1066.0" layoutX="115.0" layoutY="88.0" startX="-100.0" />
-            <TableView layoutX="700.0" layoutY="113.0" prefHeight="607.0" prefWidth="284.0">
+            <TableView fx:id="sportsTable" layoutX="700.0" layoutY="113.0" prefHeight="607.0" prefWidth="284.0">
               <columns>
-                <TableColumn prefWidth="283.0" text="SPORTS" />
+                <TableColumn fx:id="sportColumn" prefWidth="283.0" text="SPORTS" />
               </columns>
             </TableView>
             <Button layoutX="475.0" layoutY="284.0" mnemonicParsing="false" text="Ajouter" />
@@ -39,13 +39,14 @@
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bf154e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
         <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
             <children>
+
                 <Text id="labelNomPage" fx:id="labelNomPage" layoutX="8.0" layoutY="20.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Administration">
                     <font>
                         <Font name="Lemon/Milk" size="12.0" />
                     </font></Text>
             </children>
         </Pane>
-        <Button layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
+        <Button fx:id="menuButton" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
         <ImageView fitHeight="59.0" fitWidth="43.0" layoutX="1170.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/logojo.png" />

@@ -1,31 +1,22 @@
 package isep.fr.easyolympics;
 
-import javafx.application.Application;
-import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
 import isep.fr.easyolympics.model.DatabaseQueries;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
-
-
-import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class adminSports extends Application {
+import javafx.scene.control.ListView;
 
-    @FXML
-    private TableView<String> sportsTable;
-    @FXML
-    private TableColumn<String, String> sportColumn;
-
+public class adminHome implements Initializable {
 
     @FXML
     private Button menuButton;
@@ -33,28 +24,7 @@ public class adminSports extends Application {
     private ContextMenu contextMenu;
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(adminUserList.class.getResource("adminUserList.fxml"));
-        Scene scene = new Scene(root);
-
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("EasyOlympics - Liste des Athletes");
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("img/logojo.png")));
-        primaryStage.show();
-    }
-
-    @FXML
-    public void initialize() {
-        sportColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(data.getValue()));
-
-        try {
-            List<String> sports = DatabaseQueries.getSports();
-            sportsTable.getItems().addAll(sports);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Vous pouvez également afficher un message d'erreur à l'utilisateur ici
-        }
-
+    public void initialize(URL location, ResourceBundle resources) {
         contextMenu = new ContextMenu();
 
         MenuItem homeItem = new MenuItem("Accueil");
@@ -84,7 +54,7 @@ public class adminSports extends Application {
         MenuItem sportsItem = new MenuItem("Gestion des disciplines");
         sportsItem.setOnAction(event -> {
             try {
-                Main.showCalendar();
+                Main.showAdminSports();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -98,11 +68,7 @@ public class adminSports extends Application {
                 contextMenu.show(menuButton, event.getScreenX(), event.getScreenY());
             }
         });
-
-
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+
 }
