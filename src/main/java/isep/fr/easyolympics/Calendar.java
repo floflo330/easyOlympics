@@ -1,20 +1,28 @@
 package isep.fr.easyolympics;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.event.ActionEvent;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Calendar {
+public class Calendar extends Application {
 
-    @FXML
-    private Button myButton;
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        // Charger le fichier FXML
+        Parent root = FXMLLoader.load(getClass().getResource("calendar.fxml"));
 
-    // Méthode appelée lorsque le bouton est cliqué
-    @FXML
-    private void handleButtonClick(ActionEvent event) {
-        System.out.println("Bouton cliqué !");
-        // Ajoutez votre logique ici
+        // Créer une scène
+        Scene scene = new Scene(root, 800, 600);
+
+        // Configurer la scène et afficher la fenêtre
+        primaryStage.setTitle("Mon Calendrier");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
-    // Vous pouvez ajouter d'autres méthodes et champs ici selon vos besoins
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
