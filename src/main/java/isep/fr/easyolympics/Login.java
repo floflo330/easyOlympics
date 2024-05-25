@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+
 public class Login extends Application {
 
     public Text labelNomPage;
@@ -24,18 +25,12 @@ public class Login extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-
         Scene scene = new Scene(root);
-
         primaryStage.setScene(scene);
-
         primaryStage.setTitle("EasyOlympics - Connexion");
-
         primaryStage.getIcons().add(new Image(Login.class.getResourceAsStream("img/logojo.png")));
-
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
@@ -53,6 +48,18 @@ public class Login extends Application {
                 alert.setHeaderText(null);
                 alert.setContentText("Bienvenue, " + user.getUsername() + "!");
                 alert.showAndWait();
+
+                // Passer à la page d'accueil
+                try {
+                    Main.showHomeScene();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Alert alert2 = new Alert(Alert.AlertType.ERROR);
+                    alert2.setTitle("Erreur");
+                    alert2.setHeaderText(null);
+                    alert2.setContentText("Impossible de charger la page d'accueil");
+                    alert2.showAndWait();
+                }
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erreur de connexion");
