@@ -20,6 +20,7 @@ public class Home implements Initializable {
 
     @FXML
     private Button menuButton;
+    @FXML
     private ListView<String> userList;
     private ContextMenu contextMenu;
 
