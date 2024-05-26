@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import javafx.fxml.FXMLLoader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -203,6 +204,153 @@ public class DatabaseQueries {
 
         return sports;
     }
+
+    public static void addSport(String sportName) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "INSERT INTO sports (name) VALUES (?)";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, sportName);
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+
+    public static void deleteSport(String sportName) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "DELETE FROM sports WHERE name = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, sportName);
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+
+
+    public static void deleteSportById(int sportId) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "DELETE FROM sports WHERE idSport = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, sportId);
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+
+    public static List<String> getCountries() throws SQLException {
+        List<String> countries = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "SELECT name FROM countries";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String country = rs.getString("name");
+                countries.add(country);
+            }
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+
+        return countries;
+    }
+
+    public static void addAthlete(String name, String surname, String email, int idCountry, LocalDate birthDate, char sex, int idSport) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "INSERT INTO athletes (name, surname, email, idCountry, birthDate, sex, idSport) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, name);
+            stmt.setString(2, surname);
+            stmt.setString(3, email);
+            stmt.setInt(4, idCountry);
+            stmt.setDate(5, java.sql.Date.valueOf(birthDate));
+            stmt.setString(6, String.valueOf(sex)); // Assurez-vous que sex est un caractère unique
+            stmt.setInt(7, idSport);
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+
+    public static int getCountryIdByName(String countryName) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        int idCountry = -1;
+
+        try {
+            conn = Database.getConnection();
+            String query = "SELECT idCountry FROM countries WHERE name = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, countryName);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                idCountry = rs.getInt("idCountry");
+            }
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+
+        return idCountry;
+    }
+
+    public static int getSportIdByName(String sportName) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        int idSport = -1;
+
+        try {
+            conn = Database.getConnection();
+            String query = "SELECT idSport FROM sports WHERE name = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, sportName);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                idSport = rs.getInt("idSport");
+            }
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+
+        return idSport;
+    }
+
 
 }
 

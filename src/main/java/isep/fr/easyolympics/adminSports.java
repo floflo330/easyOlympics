@@ -13,8 +13,6 @@ import isep.fr.easyolympics.model.DatabaseQueries;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
-
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -22,10 +20,19 @@ import java.util.List;
 public class adminSports extends Application {
 
     @FXML
+    private Button deleteSport;
+
+    @FXML
+    private Button addSport;
+
+    @FXML
+    private TextField sportField;
+
+    @FXML
     private TableView<String> sportsTable;
+
     @FXML
     private TableColumn<String, String> sportColumn;
-
 
     @FXML
     private Button menuButton;
@@ -84,7 +91,7 @@ public class adminSports extends Application {
         MenuItem sportsItem = new MenuItem("Gestion des disciplines");
         sportsItem.setOnAction(event -> {
             try {
-                Main.showCalendar();
+                Main.showAdminSports();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -101,6 +108,35 @@ public class adminSports extends Application {
 
 
     }
+
+    @FXML
+    private void handleAddSport() {
+        String sportName = sportField.getText();
+        if (sportName != null && !sportName.trim().isEmpty()) {
+            try {
+                DatabaseQueries.addSport(sportName);
+                sportsTable.getItems().add(sportName);
+                sportField.clear();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                // Handle error (e.g., show an error message to the user)
+            }
+        }
+    }
+    @FXML
+    private void handleDeleteSport() {
+        String selectedSport = sportsTable.getSelectionModel().getSelectedItem();
+        if (selectedSport != null) {
+            try {
+                DatabaseQueries.deleteSport(selectedSport);
+                sportsTable.getItems().remove(selectedSport);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                // Handle error (e.g., show an error message to the user)
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         launch(args);

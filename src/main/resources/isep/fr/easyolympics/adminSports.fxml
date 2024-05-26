@@ -28,9 +28,15 @@
                 <TableColumn fx:id="sportColumn" prefWidth="283.0" text="SPORTS" />
               </columns>
             </TableView>
-            <Button layoutX="475.0" layoutY="284.0" mnemonicParsing="false" text="Ajouter" />
-            <TextField layoutX="244.0" layoutY="229.0" prefHeight="40.0" prefWidth="317.0" />
+            <Button fx:id="addSport" layoutX="475.0" layoutY="284.0" mnemonicParsing="false" text="Ajouter" textFill="WHITE" onAction="#handleAddSport" />
+            <TextField fx:id="sportField" layoutX="244.0" layoutY="229.0" prefHeight="40.0" prefWidth="317.0" />
             <Text layoutX="244.0" layoutY="212.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="title" text="Ajouter Un sport" wrappingWidth="317.0">
+               <font>
+                  <Font name="LEMON MILK Regular" size="39.0" />
+               </font>
+            </Text>
+            <Button fx:id="deleteSport" layoutX="287.0" layoutY="367.0" mnemonicParsing="false" text="Supprimer le sport sélectionné" textFill="WHITE" onAction="#handleDeleteSport" />
+            <Text layoutX="244.0" layoutY="351.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="title" text="Supprimer Un sport" wrappingWidth="317.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
                </font>
