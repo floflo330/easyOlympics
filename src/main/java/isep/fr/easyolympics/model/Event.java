@@ -1,29 +1,31 @@
 package isep.fr.easyolympics.model;
 
 public class Event {
-    private int id;
+    private int idEvent;
     private String name;
     private String place;
     private String date;
     private String time;
     private int idSport;
+    private String sportName; // Ajouter cet attribut
 
-    public Event(int id, String name, String place, String date, String time, int idSport) {
-        this.id = id;
+    public Event(int idEvent, String name, String place, String date, String time, int idSport, String sportName) {
+        this.idEvent = idEvent;
         this.name = name;
         this.place = place;
         this.date = date;
         this.time = time;
         this.idSport = idSport;
+        this.sportName = sportName; // Initialiser l'attribut
     }
 
-    // Getters et setters pour les champs de l'événement
-    public int getId() {
-        return id;
+    // Getters et setters pour tous les attributs
+    public int getIdEvent() {
+        return idEvent;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEvent(int idEvent) {
+        this.idEvent = idEvent;
     }
 
     public String getName() {
@@ -64,5 +66,13 @@ public class Event {
 
     public void setIdSport(int idSport) {
         this.idSport = idSport;
+    }
+
+    public String getSportName() {
+        return sportName;
+    }
+
+    public void setSportName(String sportName) {
+        this.sportName = sportName;
     }
 }

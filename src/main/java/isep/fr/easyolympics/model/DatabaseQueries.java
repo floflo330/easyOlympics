@@ -1,10 +1,10 @@
 package isep.fr.easyolympics.model;
 import isep.fr.easyolympics.model.User;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
+import java.sql.*;
+
 import javafx.fxml.FXMLLoader;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -232,7 +232,7 @@ public class DatabaseQueries {
         return events;
     }
 
-    public static void addEvent(String name, String place, String date, String time, int idSport) throws SQLException {
+    public static void addEvent(Event event) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
 
@@ -240,11 +240,11 @@ public class DatabaseQueries {
             conn = Database.getConnection();
             String query = "INSERT INTO events (name, place, date, time, idSport) VALUES (?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(query);
-            stmt.setString(1, name);
-            stmt.setString(2, place);
-            stmt.setString(3, date);
-            stmt.setString(4, time);
-            stmt.setInt(5, idSport);
+            stmt.setString(1, event.getName());
+            stmt.setString(2, event.getPlace());
+            stmt.setString(3, event.getDate());
+            stmt.setString(4, event.getTime());
+            stmt.setInt(5, event.getIdSport());
             stmt.executeUpdate();
         } finally {
             if (stmt != null) stmt.close();
@@ -252,27 +252,32 @@ public class DatabaseQueries {
         }
     }
 
+    // Méthode pour récupérer tous les événements
     public static List<Event> getEvents() throws SQLException {
-        List<Event> events = new ArrayList<>();
         Connection conn = null;
-        PreparedStatement stmt = null;
+        Statement stmt = null;
         ResultSet rs = null;
+
+        List<Event> events = new ArrayList<>();
 
         try {
             conn = Database.getConnection();
-            String query = "SELECT * FROM events";
-            stmt = conn.prepareStatement(query);
-            rs = stmt.executeQuery();
+            String query = "SELECT e.idEvent, e.name, e.place, e.date, e.time, e.idSport, s.name AS sportName " +
+                    "FROM events e " +
+                    "JOIN sports s ON e.idSport = s.idSport";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                int id = rs.getInt("idEvent");
-                String name = rs.getString("name");
-                String place = rs.getString("place");
-                String date = rs.getString("date");
-                String time = rs.getString("time");
-                int idSport = rs.getInt("idSport");
-                // Créez un nouvel objet Event et ajoutez-le à la liste des événements
-                Event event = new Event(id, name, place, date, time, idSport);
+                Event event = new Event(
+                        rs.getInt("idEvent"),
+                        rs.getString("name"),
+                        rs.getString("place"),
+                        rs.getString("date"),
+                        rs.getString("time"),
+                        rs.getInt("idSport"),
+                        rs.getString("sportName")
+                );
                 events.add(event);
             }
         } finally {
@@ -280,8 +285,24 @@ public class DatabaseQueries {
             if (stmt != null) stmt.close();
             if (conn != null) conn.close();
         }
-
         return events;
+    }
+
+    // Méthode pour supprimer un événement
+    public static void deleteEvent(int id) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "DELETE FROM events WHERE idEvent = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
     }
 
 

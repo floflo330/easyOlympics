@@ -26,23 +26,23 @@
                     </font>
                 </Text>
                 <Line endX="1066.0" layoutX="115.0" layoutY="88.0" startX="-100.0" />
-            <TableView layoutX="467.0" layoutY="114.0" prefHeight="607.0" prefWidth="719.0">
+            <TableView fx:id="eventsTable" layoutX="467.0" layoutY="114.0" prefHeight="607.0" prefWidth="719.0">
               <columns>
-                  <TableColumn prefWidth="149.0" text="NOM" />
-                <TableColumn prefWidth="92.0" text="DATE" />
-                  <TableColumn prefWidth="115.0" text="HEURE" />
-                  <TableColumn prefWidth="158.0" text="SPORT" />
-                  <TableColumn prefWidth="204.0" text="LIEU" />
+                  <TableColumn fx:id="nameColumn" prefWidth="149.0" text="NOM" />
+                <TableColumn fx:id="dateColumn" prefWidth="92.0" text="DATE" />
+                  <TableColumn fx:id="timeColumn" prefWidth="115.0" text="HEURE" />
+                  <TableColumn fx:id="sportColumn" prefWidth="158.0" text="SPORT" />
+                  <TableColumn fx:id="placeColumn" prefWidth="204.0" text="LIEU" />
               </columns>
             </TableView>
-            <Button layoutX="296.0" layoutY="593.0" mnemonicParsing="false" text="Ajouter" textFill="WHITE" />
+            <Button fx:id="addButton" layoutX="296.0" layoutY="593.0" mnemonicParsing="false" text="Ajouter" textFill="WHITE" onAction="#handleAddEvent" />
             <Text layoutX="66.0" layoutY="196.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="title" text="Ajouter Un évènement" wrappingWidth="317.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
                </font>
             </Text>
-            <DatePicker layoutX="65.0" layoutY="311.0" prefHeight="40.0" prefWidth="317.0" promptText="Date" />
-            <TextField layoutX="65.0" layoutY="239.0" prefHeight="40.0" prefWidth="317.0" promptText="Entrer un nom..." />
+            <DatePicker fx:id="datePicker" layoutX="65.0" layoutY="311.0" prefHeight="40.0" prefWidth="317.0" promptText="Date" />
+            <TextField fx:id="nameField" layoutX="65.0" layoutY="239.0" prefHeight="40.0" prefWidth="317.0" promptText="Entrer un nom..." />
             <Text layoutX="65.0" layoutY="231.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" styleClass="title" text="Nom :" wrappingWidth="317.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
@@ -58,8 +58,8 @@
                   <Font name="LEMON MILK Regular" size="39.0" />
                </font>
             </Text>
-            <Spinner editable="true" layoutX="65.0" layoutY="393.0" prefHeight="40.0" prefWidth="120.0" />
-            <Spinner editable="true" layoutX="262.0" layoutY="393.0" prefHeight="40.0" prefWidth="120.0" />
+            <Spinner fx:id="hourSpinner" editable="true" layoutX="65.0" layoutY="393.0" prefHeight="40.0" prefWidth="120.0" />
+            <Spinner fx:id="minuteSpinner" editable="true" layoutX="262.0" layoutY="393.0" prefHeight="40.0" prefWidth="120.0" />
             <Text layoutX="216.0" layoutY="421.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text=":" textAlignment="CENTER" wrappingWidth="18.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
@@ -70,14 +70,14 @@
                   <Font name="LEMON MILK Regular" size="39.0" />
                </font>
             </Text>
-            <ChoiceBox layoutX="65.0" layoutY="542.0" prefHeight="40.0" prefWidth="317.0" />
+            <ChoiceBox fx:id="sportChoiceBox" layoutX="65.0" layoutY="542.0" prefHeight="40.0" prefWidth="317.0" />
             <Text layoutX="68.0" layoutY="532.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" styleClass="title" text="Sport :" wrappingWidth="317.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
                </font>
             </Text>
-            <Button layoutX="82.0" layoutY="633.0" mnemonicParsing="false" text="Supprimer l'évènement sélectionné" textFill="WHITE" />
-            <TextField layoutX="65.0" layoutY="468.0" prefHeight="40.0" prefWidth="317.0" promptText="Entrer un lieu..." />
+            <Button fx:id="deleteButton" layoutX="82.0" layoutY="633.0" mnemonicParsing="false" text="Supprimer l'évènement sélectionné" textFill="WHITE" onAction="#handleDeleteEvent" />
+            <TextField fx:id="placeField" layoutX="65.0" layoutY="468.0" prefHeight="40.0" prefWidth="317.0" promptText="Entrer un lieu..." />
             </children></AnchorPane>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bf154e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
         <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
