@@ -5,10 +5,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.control.ListView;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -27,12 +27,15 @@ public class Home implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Création du menu contextuel
+        initializeContextMenu();
+        loadAthletesFromDatabase();
+        configureMenuButton();
+    }
+
+    private void initializeContextMenu() {
         contextMenu = new ContextMenu();
 
-        // Création des éléments du menu
-        MenuItem homeItem = new MenuItem("Accueil");
-        homeItem.setOnAction(event -> {
+        MenuItem homeItem = createMenuItem("Accueil", () -> {
             try {
                 Main.showHomeScene();
             } catch (Exception e) {
@@ -40,8 +43,7 @@ public class Home implements Initializable {
             }
         });
 
-        MenuItem profileItem = new MenuItem("Gestion des Athletes");
-        profileItem.setOnAction(event -> {
+        MenuItem profileItem = createMenuItem("Gestion des Athletes", () -> {
             try {
                 Main.showAdminUserList();
             } catch (Exception e) {
@@ -49,14 +51,12 @@ public class Home implements Initializable {
             }
         });
 
-        MenuItem eventsItem = new MenuItem("Gestion des évènements");
-        eventsItem.setOnAction(event -> {
+        MenuItem eventsItem = createMenuItem("Gestion des évènements", () -> {
             // Action pour gérer les évènements
             // Par exemple : Main.showEventManagement();
         });
 
-        MenuItem calendarItem = new MenuItem("Calendrier");
-        calendarItem.setOnAction(event -> {
+        MenuItem calendarItem = createMenuItem("Calendrier", () -> {
             try {
                 Main.showCalendar();
             } catch (Exception e) {
@@ -64,21 +64,27 @@ public class Home implements Initializable {
             }
         });
 
-        // Ajout des éléments au menu
         contextMenu.getItems().addAll(homeItem, profileItem, eventsItem, calendarItem);
+    }
 
+    private MenuItem createMenuItem(String text, Runnable action) {
+        MenuItem menuItem = new MenuItem(text);
+        menuItem.setOnAction(event -> action.run());
+        return menuItem;
+    }
+
+    private void loadAthletesFromDatabase() {
         try {
-            // Récupération des athlètes depuis la base de données
             List<String> athletes = DatabaseQueries.getSports();
-            // Ajout des athlètes à la liste d'utilisateurs
             userList.getItems().addAll(athletes);
+            userList.setCellFactory(listView -> new SportListCell());  // Use custom cell
         } catch (SQLException e) {
             e.printStackTrace();
-            // Gestion de l'erreur de récupération des données depuis la base de données
-            // Vous pouvez afficher un message à l'utilisateur pour l'informer de l'erreur
+            // Optionally, display an error message to the user
         }
+    }
 
-        // Gestion de l'événement de clic sur le bouton de menu
+    private void configureMenuButton() {
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (event.getButton() == MouseButton.PRIMARY) {
                 contextMenu.show(menuButton, event.getScreenX(), event.getScreenY());

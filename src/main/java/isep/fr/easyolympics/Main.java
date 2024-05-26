@@ -14,10 +14,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
-        //showHomeScene();
+        showHomeScene();
         //showAdminUserList();
         //showAdminHome();
-        showAddAthlete();
+        //showAddAthlete();
     }
 
     public static void showLoginScene() throws Exception {
