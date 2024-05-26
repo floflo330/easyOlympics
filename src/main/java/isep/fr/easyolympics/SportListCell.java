@@ -54,7 +54,7 @@ public class SportListCell extends ListCell<String> {
                 e.printStackTrace();
             }
             setGraphic(content);
-            setStyle("-fx-background-color: #f4f4f4; -fx-padding: 10px; -fx-font-size: 14px; -fx-font-family: 'Arial';");
+            setStyle("-fx-background-color: #f4f4f4; -fx-padding: 10px; -fx-font-size: 20px; -fx-font-family: 'Lemon Milk';");
         }
     }
 }

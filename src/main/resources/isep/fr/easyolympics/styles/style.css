@@ -95,8 +95,6 @@
 }
 
 
-
-
 .button:hover{
     -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
@@ -124,12 +122,6 @@
     -fx-min-height: 40;
 }
 
-.text-field{
-    -fx-font-family: "Lemon Milk Regular";
-    -fx-font-size: 14;
-    -fx-min-width: 40;
-    -fx-min-height: 40;
-}
 
 .navbar-blue{
     -fx-background-color: linear-gradient(to right, #0E3A53, #15ABA7);
