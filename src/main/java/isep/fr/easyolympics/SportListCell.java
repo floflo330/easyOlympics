@@ -20,8 +20,8 @@ public class SportListCell extends ListCell<String> {
         super();
         name = new Text();
         imageView = new ImageView();
-        imageView.setFitHeight(30);
-        imageView.setFitWidth(30);
+        imageView.setFitHeight(50);
+        imageView.setFitWidth(50);
         content = new HBox(imageView, name);
         content.setSpacing(10);
 
