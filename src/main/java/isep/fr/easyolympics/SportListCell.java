@@ -7,11 +7,14 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SportListCell extends ListCell<String> {
-    private HBox content;
-    private Text name;
-    private ImageView imageView;
+    private final HBox content;
+    private final Text name;
+    private final ImageView imageView;
+    private final Map<String, String> imagePaths;
 
     public SportListCell() {
         super();
@@ -21,6 +24,13 @@ public class SportListCell extends ListCell<String> {
         imageView.setFitWidth(30);
         content = new HBox(imageView, name);
         content.setSpacing(10);
+
+        // Définir les chemins d'image pour chaque discipline
+        imagePaths = new HashMap<>();
+        imagePaths.put("swimming", "/isep/fr/easyolympics/img/swimming.png");
+        imagePaths.put("basketball", "/isep/fr/easyolympics/img/basketball.png");
+        imagePaths.put("football", "/isep/fr/easyolympics/img/football.png");
+        // Ajoutez ici les autres disciplines avec leurs chemins d'image correspondants
     }
 
     @Override
@@ -31,15 +41,14 @@ public class SportListCell extends ListCell<String> {
             setGraphic(null);
         } else {
             name.setText(item);
-            // Try to load the specific image
+            // Charger l'image spécifique à la discipline si elle existe, sinon charger l'image par défaut
+            String imagePath = imagePaths.getOrDefault(item.toLowerCase(), "/isep/fr/easyolympics/img/logojo.png");
             try {
-                String imagePath = "/isep/fr/easyolympics/img/" + item.toLowerCase() + ".png";
                 InputStream imageStream = getClass().getResourceAsStream(imagePath);
                 if (imageStream != null) {
                     imageView.setImage(new Image(imageStream));
                 } else {
-                    // Load the default image if the specific image is not found
-                    imageView.setImage(new Image("/isep/fr/easyolympics/img/1.png"));
+                    System.err.println("Impossible de charger l'image : " + imagePath);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
