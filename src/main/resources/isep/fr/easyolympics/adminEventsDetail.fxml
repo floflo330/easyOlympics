@@ -26,7 +26,7 @@
                     </font>
                 </Text>
                 <Line endX="1066.0" layoutX="115.0" layoutY="88.0" startX="-100.0" />
-            <Button fx:id="addButton" layoutX="365.0" layoutY="595.0" mnemonicParsing="false" onAction="#handleAddEvent" text="Modifier" textFill="WHITE" />
+            <Button fx:id="addButton" layoutX="365.0" layoutY="595.0" mnemonicParsing="false" text="Modifier" textFill="WHITE" />
             <Text layoutX="135.0" layoutY="198.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="title" text="Modifier l'évènement " wrappingWidth="317.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
@@ -80,7 +80,7 @@
                   <TableColumn fx:id="countryColumn" prefWidth="157.0" text="PAYS" />
               </columns>
             </TableView>
-            <Button fx:id="addAthleteButton" layoutX="926.0" layoutY="685.0" mnemonicParsing="false" onAction="#handleAddEvent" text="Ajouter" textFill="WHITE" />
+            <Button fx:id="addAthleteButton" layoutX="926.0" layoutY="685.0" mnemonicParsing="false" text="Ajouter" textFill="WHITE" />
             <ChoiceBox fx:id="athleteChoiceBox" layoutX="695.0" layoutY="634.0" prefHeight="40.0" prefWidth="317.0" />
             <Text layoutX="698.0" layoutY="624.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" styleClass="title" text="Ajouter un Athlete" wrappingWidth="317.0">
                <font>

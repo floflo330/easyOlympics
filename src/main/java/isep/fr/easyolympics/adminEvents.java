@@ -165,6 +165,18 @@ public class adminEvents extends Application{
         // Supprimer l'événement sélectionné
         deleteButton.setOnAction(event -> deleteEvent());
 
+
+        eventsTable.setRowFactory(tv -> {
+            TableRow<Event> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    Event rowData = row.getItem();
+                    showEventDetails(rowData);
+                }
+            });
+            return row;
+        });
+
     }
 
 
@@ -266,6 +278,26 @@ public class adminEvents extends Application{
             e.printStackTrace();
         }
     }
+    private void showEventDetails(Event event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adminEventsDetail.fxml"));
+            Parent root = loader.load();
+
+            // Obtenir le contrôleur et passer l'événement sélectionné
+            adminEventsDetail controller = loader.getController();
+            controller.setEvent(event);
+
+            Stage stage = new Stage();
+            stage.setTitle("Détails de l'événement");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 
 
 
