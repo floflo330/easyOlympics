@@ -31,6 +31,10 @@ public class adminUserList extends Application {
     @FXML
     private ContextMenu contextMenu;
 
+    @FXML
+    private Button addAthlete;
+
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(adminUserList.class.getResource("adminUserList.fxml"));
@@ -41,6 +45,16 @@ public class adminUserList extends Application {
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("img/logojo.png")));
         primaryStage.show();
     }
+
+    @FXML
+    private void handleButtonAddAthlete() {
+        try {
+            Main.showAddAthlete();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     public void initialize() {

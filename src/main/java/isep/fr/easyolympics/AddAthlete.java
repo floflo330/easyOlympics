@@ -40,6 +40,8 @@ public class AddAthlete implements Initializable  {
     private RadioButton femaleRadioButton;
     @FXML
     private Button addButton;
+    @FXML
+    private Button backButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -99,6 +101,14 @@ public class AddAthlete implements Initializable  {
         }
     }
 
+    @FXML
+    private void handleBackButton(){
+        try {
+            Main.showAdminUserList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
