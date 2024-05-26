@@ -16,10 +16,11 @@ public class Main extends Application {
         Main.primaryStage = primaryStage;
         //showHomeScene();
         //showAdminUserList();
-        //showAdminHome();
+        showAdminEvents();
         //showAddAthlete();
         //showAdminSports();
-        showAdminCountries();
+        //showAdminCountries();
+        //showAdminHome();
 
     }
 
@@ -94,6 +95,16 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
         primaryStage.show();
     }
+
+    public static void showAdminEvents() throws Exception {
+        Parent root = FXMLLoader.load(Main.class.getResource("adminEvents.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("EasyOlympics - Gestion des Evènements");
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
+        primaryStage.show();
+    }
+
 
 
 

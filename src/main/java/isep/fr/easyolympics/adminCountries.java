@@ -66,10 +66,10 @@ public class adminCountries extends Application {
 
         contextMenu = new ContextMenu();
 
-        MenuItem homeItem = new MenuItem("Accueil");
+        MenuItem homeItem = new MenuItem("Accueil Administration");
         homeItem.setOnAction(event -> {
             try {
-                Main.showHomeScene();
+                Main.showAdminHome();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -84,10 +84,13 @@ public class adminCountries extends Application {
             }
         });
 
-        MenuItem logoutItem = new MenuItem("Gestion des évènements");
-        logoutItem.setOnAction(event -> {
-            // Action pour se déconnecter
-            // Par exemple : Main.showLoginScene();
+        MenuItem eventsItem = new MenuItem("Gestion des évènements");
+        eventsItem.setOnAction(event -> {
+            try {
+                Main.showAdminEvents();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
 
         MenuItem sportsItem = new MenuItem("Gestion des disciplines");
@@ -108,8 +111,18 @@ public class adminCountries extends Application {
             }
         });
 
+        MenuItem exitItem = new MenuItem("Quitter l'administration");
+        exitItem.setOnAction(event -> {
+            try {
+                Main.showHomeScene();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
 
-        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, sportsItem, countriesItem);
+
+
+        contextMenu.getItems().addAll(homeItem, profileItem, eventsItem, sportsItem, countriesItem, exitItem);
 
 
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {

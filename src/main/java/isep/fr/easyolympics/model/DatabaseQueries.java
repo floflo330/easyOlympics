@@ -232,6 +232,60 @@ public class DatabaseQueries {
         return events;
     }
 
+    public static void addEvent(String name, String place, String date, String time, int idSport) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "INSERT INTO events (name, place, date, time, idSport) VALUES (?, ?, ?, ?, ?)";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, name);
+            stmt.setString(2, place);
+            stmt.setString(3, date);
+            stmt.setString(4, time);
+            stmt.setInt(5, idSport);
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+
+    public static List<Event> getEvents() throws SQLException {
+        List<Event> events = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "SELECT * FROM events";
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("idEvent");
+                String name = rs.getString("name");
+                String place = rs.getString("place");
+                String date = rs.getString("date");
+                String time = rs.getString("time");
+                int idSport = rs.getInt("idSport");
+                // Créez un nouvel objet Event et ajoutez-le à la liste des événements
+                Event event = new Event(id, name, place, date, time, idSport);
+                events.add(event);
+            }
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+
+        return events;
+    }
+
+
+
     public static void addSport(String sportName) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;

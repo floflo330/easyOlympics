@@ -68,10 +68,10 @@ public class adminUserList extends Application {
 
         contextMenu = new ContextMenu();
 
-        MenuItem homeItem = new MenuItem("Accueil");
+        MenuItem homeItem = new MenuItem("Accueil Administration");
         homeItem.setOnAction(event -> {
             try {
-                Main.showHomeScene();
+                Main.showAdminHome();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -86,22 +86,44 @@ public class adminUserList extends Application {
             }
         });
 
-        MenuItem logoutItem = new MenuItem("Gestion des évènements");
-        logoutItem.setOnAction(event -> {
-            // Action pour se déconnecter
-            // Par exemple : Main.showLoginScene();
-        });
-
-        MenuItem sportsItem = new MenuItem("Gestion des disciplines");
-        sportsItem.setOnAction(event -> {
+        MenuItem eventsItem = new MenuItem("Gestion des évènements");
+        eventsItem.setOnAction(event -> {
             try {
-                Main.showCalendar();
+                Main.showAdminEvents();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
 
-        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, sportsItem);
+        MenuItem sportsItem = new MenuItem("Gestion des disciplines");
+        sportsItem.setOnAction(event -> {
+            try {
+                Main.showAdminSports();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem countriesItem = new MenuItem("Gestion des pays");
+        countriesItem.setOnAction(event -> {
+            try {
+                Main.showAdminCountries();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem exitItem = new MenuItem("Quitter l'administration");
+        exitItem.setOnAction(event -> {
+            try {
+                Main.showHomeScene();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        contextMenu.getItems().addAll(homeItem, profileItem, eventsItem, sportsItem, countriesItem, exitItem);
 
 
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
