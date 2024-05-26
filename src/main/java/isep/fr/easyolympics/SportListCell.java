@@ -29,8 +29,8 @@ public class SportListCell extends ListCell<String> {
             setGraphic(null);
         } else {
             name.setText(item);
-            // Replace with actual logic to load appropriate image
-            imageView.setImage(new Image("https://github.com/floflo330/easyOlympics/blob/5aa6d226c1d7058e024a9c0ee39bd7df1aad8401/src/main/resources/isep/fr/easyolympics/img/1.png"));
+            // Charger l'image à partir des ressources internes du projet en utilisant ClassLoader
+            imageView.setImage(new Image(getClass().getResourceAsStream("/isep/fr/easyolympics/img/1.png")));
             setGraphic(content);
             setStyle("-fx-background-color: #f4f4f4; -fx-padding: 10px; -fx-font-size: 14px; -fx-font-family: 'Arial';");
         }
