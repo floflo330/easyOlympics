@@ -136,17 +136,23 @@
 
 }
 
-/* styles/style.css */
 
-.navbar-blue {
-    -fx-fill: linear-gradient(to right, #0E3A53, #15ABA7);
-}
+
+
+
+
+
+
+
+
 
 .list-cell {
     -fx-background-color: #f4f4f4;
     -fx-padding: 10px;
     -fx-font-size: 14px;
     -fx-font-family: "Arial";
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 0 0 1 0;
 }
 
 .list-cell:hover {
@@ -162,4 +168,5 @@
 
 .list-view {
     -fx-background-color: transparent;
+    -fx-border-color: transparent;
 }
