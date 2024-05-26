@@ -27,9 +27,11 @@ public class SportListCell extends ListCell<String> {
 
         // Définir les chemins d'image pour chaque discipline
         imagePaths = new HashMap<>();
+        imagePaths.put("athlétisme", "/isep/fr/easyolympics/img/Athlétisme.svg");
+        imagePaths.put("aviron", "/isep/fr/easyolympics/img/swimming.png");
+        imagePaths.put("badminton", "/isep/fr/easyolympics/img/BDM_small.svg");
+        imagePaths.put("basketball", "/isep/fr/easyolympics/img/BKB_small.svg");
         imagePaths.put("swimming", "/isep/fr/easyolympics/img/swimming.png");
-        imagePaths.put("basketball", "/isep/fr/easyolympics/img/basketball.png");
-        imagePaths.put("football", "/isep/fr/easyolympics/img/football.png");
         // Ajoutez ici les autres disciplines avec leurs chemins d'image correspondants
     }
 
