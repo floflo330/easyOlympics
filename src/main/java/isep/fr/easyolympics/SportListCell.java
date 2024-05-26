@@ -6,6 +6,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
+import java.io.InputStream;
+
 public class SportListCell extends ListCell<String> {
     private HBox content;
     private Text name;
@@ -29,8 +31,19 @@ public class SportListCell extends ListCell<String> {
             setGraphic(null);
         } else {
             name.setText(item);
-            // Charger l'image à partir des ressources internes du projet en utilisant ClassLoader
-            imageView.setImage(new Image(getClass().getResourceAsStream("/isep/fr/easyolympics/img/1.png")));
+            // Try to load the specific image
+            try {
+                String imagePath = "/isep/fr/easyolympics/img/" + item.toLowerCase() + ".png";
+                InputStream imageStream = getClass().getResourceAsStream(imagePath);
+                if (imageStream != null) {
+                    imageView.setImage(new Image(imageStream));
+                } else {
+                    // Load the default image if the specific image is not found
+                    imageView.setImage(new Image("/isep/fr/easyolympics/img/1.png"));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             setGraphic(content);
             setStyle("-fx-background-color: #f4f4f4; -fx-padding: 10px; -fx-font-size: 14px; -fx-font-family: 'Arial';");
         }
