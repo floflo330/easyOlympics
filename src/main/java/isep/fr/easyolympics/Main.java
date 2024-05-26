@@ -15,9 +15,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
         //showHomeScene();
-        //showAdminUserList();
+        showAdminUserList();
         //showAdminHome();
-        showAddAthlete();
+        //showAddAthlete();
     }
 
     public static void showLoginScene() throws Exception {
