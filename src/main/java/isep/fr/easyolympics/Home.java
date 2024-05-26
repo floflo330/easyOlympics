@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -76,8 +77,10 @@ public class Home implements Initializable {
     private void loadAthletesFromDatabase() {
         try {
             List<String> athletes = DatabaseQueries.getSports();
+            // Trier les disciplines dans l'ordre alphabétique
+            Collections.sort(athletes);
             userList.getItems().addAll(athletes);
-            userList.setCellFactory(listView -> new SportListCell());  // Use custom cell
+            userList.setCellFactory(listView -> new SportListCell());  // Utilise la cellule personnalisée
         } catch (SQLException e) {
             e.printStackTrace();
             // Optionally, display an error message to the user
