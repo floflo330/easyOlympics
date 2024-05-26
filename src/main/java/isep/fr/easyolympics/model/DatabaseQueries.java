@@ -188,7 +188,7 @@ public class DatabaseQueries {
 
         try {
             conn = Database.getConnection();
-            String query = "SELECT name FROM sports";
+            String query = "SELECT name FROM sports ORDER BY name";
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
 
@@ -265,6 +265,24 @@ public class DatabaseQueries {
     }
 
 
+    public static void deleteCountry(String countryName) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "DELETE FROM countries WHERE name = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, countryName);
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+
+
+
     public static void deleteSportById(int sportId) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -289,7 +307,7 @@ public class DatabaseQueries {
 
         try {
             conn = Database.getConnection();
-            String query = "SELECT name FROM countries";
+            String query = "SELECT name FROM countries ORDER BY name";
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
 

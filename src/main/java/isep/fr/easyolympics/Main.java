@@ -14,10 +14,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
-        showHomeScene();
+        //showHomeScene();
         //showAdminUserList();
         //showAdminHome();
         //showAddAthlete();
+        //showAdminSports();
+        showAdminCountries();
+
     }
 
     public static void showLoginScene() throws Exception {
@@ -79,6 +82,15 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("EasyOlympics - Ajouter un utilisateur");
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
+        primaryStage.show();
+    }
+
+    public static void showAdminCountries() throws Exception {
+        Parent root = FXMLLoader.load(Main.class.getResource("adminCountries.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("EasyOlympics - Gestion des Pays");
         primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
         primaryStage.show();
     }

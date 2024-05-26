@@ -60,7 +60,17 @@ public class adminHome implements Initializable {
             }
         });
 
-        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, sportsItem);
+
+        MenuItem countriesItem = new MenuItem("Gestion des pays");
+        countriesItem.setOnAction(event -> {
+            try {
+                Main.showAdminCountries();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, sportsItem, countriesItem);
 
 
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {

@@ -7,10 +7,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import isep.fr.easyolympics.model.DatabaseQueries;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+
 
 
 import java.net.URL;
@@ -43,6 +48,11 @@ public class AddAthlete implements Initializable  {
     @FXML
     private Button backButton;
 
+    @FXML
+    private Button menuButton;
+    @FXML
+    private ContextMenu contextMenu;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ToggleGroup genderGroup = new ToggleGroup();
@@ -59,6 +69,60 @@ public class AddAthlete implements Initializable  {
             e.printStackTrace();
             // Handle error (e.g., show an error message to the user)
         }
+
+        contextMenu = new ContextMenu();
+
+        MenuItem homeItem = new MenuItem("Accueil");
+        homeItem.setOnAction(event -> {
+            try {
+                Main.showHomeScene();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem profileItem = new MenuItem("Gestion des Athletes");
+        profileItem.setOnAction(event -> {
+            try {
+                Main.showAdminUserList();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem logoutItem = new MenuItem("Gestion des évènements");
+        logoutItem.setOnAction(event -> {
+            // Action pour se déconnecter
+            // Par exemple : Main.showLoginScene();
+        });
+
+        MenuItem sportsItem = new MenuItem("Gestion des disciplines");
+        sportsItem.setOnAction(event -> {
+            try {
+                Main.showAdminSports();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        MenuItem countriesItem = new MenuItem("Gestion des pays");
+        countriesItem.setOnAction(event -> {
+            try {
+                Main.showAdminCountries();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, sportsItem, countriesItem);
+
+
+        menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            if (event.getButton() == MouseButton.PRIMARY) {
+                contextMenu.show(menuButton, event.getScreenX(), event.getScreenY());
+            }
+        });
     }
 
     @FXML

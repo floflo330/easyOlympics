@@ -16,23 +16,25 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import javafx.fxml.Initializable;
 
-public class adminSports extends Application {
 
-    @FXML
-    private Button deleteSport;
-
-    @FXML
-    private Button addSport;
+public class adminCountries extends Application {
 
     @FXML
-    private TextField sportField;
+    private Button deleteCountry;
 
     @FXML
-    private TableView<String> sportsTable;
+    private Button addCountry;
 
     @FXML
-    private TableColumn<String, String> sportColumn;
+    private TextField countryField;
+
+    @FXML
+    private TableView<String> countryTable;
+
+    @FXML
+    private TableColumn<String, String> countryColumn;
 
     @FXML
     private Button menuButton;
@@ -52,11 +54,11 @@ public class adminSports extends Application {
 
     @FXML
     public void initialize() {
-        sportColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(data.getValue()));
+        countryColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(data.getValue()));
 
         try {
-            List<String> sports = DatabaseQueries.getSports();
-            sportsTable.getItems().addAll(sports);
+            List<String> countries = DatabaseQueries.getCountries();
+            countryTable.getItems().addAll(countries);
         } catch (SQLException e) {
             e.printStackTrace();
             // Vous pouvez également afficher un message d'erreur à l'utilisateur ici
@@ -106,6 +108,7 @@ public class adminSports extends Application {
             }
         });
 
+
         contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, sportsItem, countriesItem);
 
 
@@ -119,13 +122,13 @@ public class adminSports extends Application {
     }
 
     @FXML
-    private void handleAddSport() {
-        String sportName = sportField.getText();
-        if (sportName != null && !sportName.trim().isEmpty()) {
+    private void handleAddCountry() {
+        String countryName = countryField.getText();
+        if (countryName != null && !countryName.trim().isEmpty()) {
             try {
-                DatabaseQueries.addSport(sportName);
-                sportsTable.getItems().add(sportName);
-                sportField.clear();
+                DatabaseQueries.addSport(countryName);
+                countryTable.getItems().add(countryName);
+                countryField.clear();
             } catch (SQLException e) {
                 e.printStackTrace();
                 // Handle error (e.g., show an error message to the user)
@@ -133,12 +136,12 @@ public class adminSports extends Application {
         }
     }
     @FXML
-    private void handleDeleteSport() {
-        String selectedSport = sportsTable.getSelectionModel().getSelectedItem();
-        if (selectedSport != null) {
+    private void handleDeleteCountry() {
+        String selectedCountry = countryTable.getSelectionModel().getSelectedItem();
+        if (selectedCountry != null) {
             try {
-                DatabaseQueries.deleteSport(selectedSport);
-                sportsTable.getItems().remove(selectedSport);
+                DatabaseQueries.deleteCountry(selectedCountry);
+                countryTable.getItems().remove(selectedCountry);
             } catch (SQLException e) {
                 e.printStackTrace();
                 // Handle error (e.g., show an error message to the user)
