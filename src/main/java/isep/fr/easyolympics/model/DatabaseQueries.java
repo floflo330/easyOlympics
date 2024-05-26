@@ -470,7 +470,39 @@ public class DatabaseQueries {
 
         return idSport;
     }
+    public static List<Athlete> getAthletesByEvent(int eventId) throws SQLException {
+        List<Athlete> athletes = new ArrayList<>();
+        String query = "SELECT a.* FROM athletes a JOIN events_athletes ea ON a.idAthlete = ea.idAthlete WHERE ea.idEvent = ?";
+        try (Connection conn = Database.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setInt(1, eventId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    int id = rs.getInt("idAthlete");
+                    String name = rs.getString("name");
+                    String surname = rs.getString("surname");
+                    String country = rs.getString("country");
+                    athletes.add(new Athlete(id, name, surname, country));
+                }
+            }
+        }
+        return athletes;
+    }
 
+    public static List<String> getAthletesBySport(String sportName) throws SQLException {
+        List<String> athletes = new ArrayList<>();
+        String query = "SELECT a.name FROM athletes a JOIN sports s ON a.idSport = s.idSport WHERE s.name = ?";
+        try (Connection conn = Database.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, sportName);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    athletes.add(rs.getString("name"));
+                }
+            }
+        }
+        return athletes;
+    }
 
 }
 

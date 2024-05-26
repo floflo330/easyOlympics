@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
+      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminEventsDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminEventsDetail.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminEvents.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminEvents.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +251,7 @@
       <workItem from="1716559778264" duration="2655000" />
       <workItem from="1716630574822" duration="14844000" />
       <workItem from="1716660750222" duration="60000" />
-      <workItem from="1716660843416" duration="19861000" />
+      <workItem from="1716660843416" duration="21041000" />
     </task>
     <task id="LOCAL-00001" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -615,7 +613,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716748494396</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716758193134</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1716758193134</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
