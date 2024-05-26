@@ -204,6 +204,33 @@ public class DatabaseQueries {
 
         return sports;
     }
+    public static List<String> getEventsForDay(int day) throws SQLException {
+        List<String> events = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "SELECT name, description FROM events WHERE event_day = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, day);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String eventName = rs.getString("name");
+                String eventDescription = rs.getString("description");
+                String eventInfo = String.format("Event: %s - Description: %s", eventName, eventDescription);
+                events.add(eventInfo);
+            }
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+
+        return events;
+    }
 
     public static void addSport(String sportName) throws SQLException {
         Connection conn = null;
@@ -353,5 +380,7 @@ public class DatabaseQueries {
 
 
 }
+
+
 
 
