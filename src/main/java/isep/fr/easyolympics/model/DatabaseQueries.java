@@ -192,8 +192,8 @@ public class DatabaseQueries {
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                String sportName = rs.getString("name");
-                sports.add(sportName);
+                String sport = rs.getString("name");
+                sports.add(sport);
             }
         } finally {
             if (rs != null) rs.close();
@@ -205,3 +205,5 @@ public class DatabaseQueries {
     }
 
 }
+
+
