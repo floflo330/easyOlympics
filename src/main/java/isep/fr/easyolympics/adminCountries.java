@@ -16,7 +16,6 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import javafx.fxml.Initializable;
 
 
 public class adminCountries extends Application {
@@ -165,5 +164,8 @@ public class adminCountries extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static class Day {
     }
 }

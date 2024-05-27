@@ -12,6 +12,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -62,7 +63,7 @@ public class Home implements Initializable {
 
         MenuItem eventsItem = createMenuItem("Gestion des évènements", () -> {
             // Action pour gérer les évènements
-            // Par exemple : Main.showEventManagement();
+            // Par exemple : Main.showAdminEvents();
         });
 
         MenuItem calendarItem = createMenuItem("Calendrier", () -> {

@@ -24,6 +24,12 @@ public class Calendar {
     private TextArea eventTextArea;
 
     @FXML
+    public void initialize() {
+        // Assurez-vous que la zone de texte est initialisée
+        eventTextArea = new TextArea();
+    }
+
+    @FXML
     void handleButtonClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         String buttonText = clickedButton.getText();

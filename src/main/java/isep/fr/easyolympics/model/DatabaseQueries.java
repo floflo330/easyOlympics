@@ -212,15 +212,16 @@ public class DatabaseQueries {
 
         try {
             conn = Database.getConnection();
-            String query = "SELECT name, description FROM events WHERE event_day = ?";
+            String query = "SELECT name, place, date FROM events WHERE date = ?";
             stmt = conn.prepareStatement(query);
             stmt.setInt(1, day);
             rs = stmt.executeQuery();
 
             while (rs.next()) {
                 String eventName = rs.getString("name");
-                String eventDescription = rs.getString("description");
-                String eventInfo = String.format("Event: %s - Description: %s", eventName, eventDescription);
+                String eventPlace = rs.getString("place");
+                String eventDate = rs.getString("date");
+                String eventInfo = String.format("Event: %s - Place: %s - Date: %s", eventName, eventPlace, eventDate);
                 events.add(eventInfo);
             }
         } finally {
@@ -231,6 +232,7 @@ public class DatabaseQueries {
 
         return events;
     }
+
 
     public static void addEvent(Event event) throws SQLException {
         Connection conn = null;
@@ -547,6 +549,25 @@ public class DatabaseQueries {
             preparedStatement.setString(4, time);
             preparedStatement.executeUpdate();
         }
+    }
+
+    public static List<String> getEventsForSport(String sportName) throws SQLException {
+        List<String> events = new ArrayList<>();
+        String query = "SELECT * FROM events WHERE idSport = (SELECT idSport FROM sports WHERE name = ?)";
+        try (Connection conn = Database.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, sportName);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    String eventInfo = String.format("Event: %s, Date: %s, Location: %s",
+                            rs.getString("name"),
+                            rs.getDate("date"),
+                            rs.getString("place"));
+                    events.add(eventInfo);
+                }
+            }
+        }
+        return events;
     }
 
 }

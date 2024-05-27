@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/SportListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/SportListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/Athlétisme.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/BDM_small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/BKB_small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/Olympic_pictogram_Athletics.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/Athlétisme.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/ROW_small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/TRI_small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/test.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +57,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -250,10 +259,15 @@
       <workItem from="1716559778264" duration="2655000" />
       <workItem from="1716630574822" duration="14844000" />
       <workItem from="1716660750222" duration="60000" />
-      <workItem from="1716660843416" duration="23268000" />
-      <workItem from="1716794484905" duration="335000" />
-      <workItem from="1716797079946" duration="3594000" />
-      <workItem from="1716802772226" duration="6348000" />
+      <workItem from="1716660843416" duration="11701000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add login.fxml">
+      <option name="closed" value="true" />
+      <created>1713363398586</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713363398586</updated>
     </task>
     <task id="LOCAL-00002" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -591,63 +605,7 @@
       <option name="project" value="LOCAL" />
       <updated>1716736152206</updated>
     </task>
-    <task id="LOCAL-00044" summary="Modif">
-      <option name="closed" value="true" />
-      <created>1716738717487</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1716738717487</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Modif">
-      <option name="closed" value="true" />
-      <created>1716748494396</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1716748494396</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Modif">
-      <option name="closed" value="true" />
-      <created>1716758193134</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1716758193134</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Modif">
-      <option name="closed" value="true" />
-      <created>1716759563543</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1716759563543</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Modif">
-      <option name="closed" value="true" />
-      <created>1716761298690</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1716761298690</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Modif">
-      <option name="closed" value="true" />
-      <created>1716804226823</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1716804226823</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Modif">
-      <option name="closed" value="true" />
-      <created>1716808717212</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1716808717214</updated>
-    </task>
-    <option name="localTasksCounter" value="51" />
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
