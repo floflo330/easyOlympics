@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
@@ -14,6 +15,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class Calendar {
+    @FXML
+    private Button menuButton;
+    @FXML
+    private ContextMenu contextMenu;
 
     @FXML private Button btnJuly30;
     @FXML private Button btnJuly27;
@@ -62,7 +67,13 @@ public class Calendar {
     public void initialize() {
         // Assurez-vous que la zone de texte est initialisée
         eventTextArea = new TextArea();
+
+
+
     }
+
+
+
 
     @FXML
     void handleButtonClick(ActionEvent event) {
