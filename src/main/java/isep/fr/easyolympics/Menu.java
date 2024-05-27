@@ -31,22 +31,34 @@ public class Menu implements Initializable {
             }
         });
 
-        MenuItem profileItem = new MenuItem("Profil");
+        MenuItem profileItem = new MenuItem("Resultats par Pays");
         profileItem.setOnAction(event -> {
-            // Action pour aller à la page de profil
-            // Par exemple : Main.showProfileScene();
-        });
-
-        MenuItem logoutItem = new MenuItem("Déconnexion");
-        logoutItem.setOnAction(event -> {
             try {
-                Main.showLoginScene();
+                Main.showCountryResults();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
 
-        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem);
+        MenuItem logoutItem = new MenuItem("Calendrier");
+        logoutItem.setOnAction(event -> {
+            try {
+                Main.showCalendar();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem adminItem = new MenuItem("Administration");
+        logoutItem.setOnAction(event -> {
+            try {
+                Main.showAdminHome();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, adminItem);
 
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (event.getButton() == MouseButton.PRIMARY) {

@@ -61,11 +61,6 @@ public class Home implements Initializable {
             }
         });
 
-        MenuItem eventsItem = createMenuItem("Gestion des évènements", () -> {
-            // Action pour gérer les évènements
-            // Par exemple : Main.showAdminEvents();
-        });
-
         MenuItem calendarItem = createMenuItem("Calendrier", () -> {
             try {
                 Main.showCalendar();
@@ -74,7 +69,15 @@ public class Home implements Initializable {
             }
         });
 
-        contextMenu.getItems().addAll(homeItem, profileItem, eventsItem, calendarItem);
+        MenuItem eventsItem = createMenuItem("Administration", () -> {
+            try {
+                Main.showAdminHome();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(homeItem, profileItem, calendarItem, eventsItem);
     }
 
     private MenuItem createMenuItem(String text, Runnable action) {
