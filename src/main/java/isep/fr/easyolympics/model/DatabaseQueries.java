@@ -212,16 +212,15 @@ public class DatabaseQueries {
 
         try {
             conn = Database.getConnection();
-            String query = "SELECT name, place, date FROM events WHERE date = ?";
+            String query = "SELECT name, description FROM events WHERE event_day = ?";
             stmt = conn.prepareStatement(query);
             stmt.setInt(1, day);
             rs = stmt.executeQuery();
 
             while (rs.next()) {
                 String eventName = rs.getString("name");
-                String eventPlace = rs.getString("place");
-                String eventDate = rs.getString("date");
-                String eventInfo = String.format("Event: %s - Place: %s - Date: %s", eventName, eventPlace, eventDate);
+                String eventDescription = rs.getString("description");
+                String eventInfo = String.format("Event: %s - Description: %s", eventName, eventDescription);
                 events.add(eventInfo);
             }
         } finally {
@@ -232,7 +231,6 @@ public class DatabaseQueries {
 
         return events;
     }
-
 
     public static void addEvent(Event event) throws SQLException {
         Connection conn = null;
@@ -551,27 +549,115 @@ public class DatabaseQueries {
         }
     }
 
-    public static List<String> getEventsForSport(String sportName) throws SQLException {
-        List<String> events = new ArrayList<>();
-        String query = "SELECT * FROM events WHERE idSport = (SELECT idSport FROM sports WHERE name = ?)";
-        try (Connection conn = Database.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, sportName);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    String eventInfo = String.format("Event: %s, Date: %s, Location: %s",
-                            rs.getString("name"),
-                            rs.getDate("date"),
-                            rs.getString("place"));
-                    events.add(eventInfo);
-                }
+
+    public static void addAthleteToEvent(int athleteId, int eventId) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            // Obtenir la connexion à la base de données
+            connection = Database.getConnection();
+
+            // Préparer la requête SQL pour insérer l'athlète à l'événement dans la table events_athletes
+            String query = "INSERT INTO events_athletes (idAthlete, idEvent) VALUES (?, ?)";
+            preparedStatement = connection.prepareStatement(query);
+
+            // Remplir les paramètres de la requête avec l'ID de l'athlète et de l'événement
+            preparedStatement.setInt(1, athleteId);
+            preparedStatement.setInt(2, eventId);
+
+            // Exécuter la requête pour ajouter l'athlète à l'événement
+            preparedStatement.executeUpdate();
+        } finally {
+            // Fermer les ressources
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+            if (connection != null) {
+                connection.close();
             }
         }
-        return events;
     }
 
+    public static int getAthleteIdByName(String athleteName) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        int athleteId = -1; // Valeur par défaut si l'athlète n'est pas trouvé
+
+        try {
+            // Obtenir la connexion à la base de données
+            connection = Database.getConnection();
+
+            // Préparer la requête SQL pour obtenir l'ID de l'athlète par son nom
+            String query = "SELECT idAthlete FROM athletes WHERE name = ?";
+            preparedStatement = connection.prepareStatement(query);
+
+            // Remplir les paramètres de la requête avec le nom de l'athlète
+            preparedStatement.setString(1, athleteName);
+
+            // Exécuter la requête pour obtenir l'ID de l'athlète
+            resultSet = preparedStatement.executeQuery();
+
+            // Si un résultat est trouvé, récupérer l'ID de l'athlète
+            if (resultSet.next()) {
+                athleteId = resultSet.getInt("idAthlete");
+            }
+        } finally {
+            // Fermer les ressources
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        }
+
+        return athleteId;
+    }
+
+    public static String getCountryById(int countryId) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        String countryName = null;
+
+        try {
+            // Obtenir la connexion à la base de données
+            connection = Database.getConnection();
+
+            // Préparer la requête SQL pour obtenir le nom du pays par son ID
+            String query = "SELECT name FROM countries WHERE idCountry = ?";
+            preparedStatement = connection.prepareStatement(query);
+
+            // Remplir les paramètres de la requête avec l'ID du pays
+            preparedStatement.setInt(1, countryId);
+
+            // Exécuter la requête pour obtenir le nom du pays
+            resultSet = preparedStatement.executeQuery();
+
+            // Si un résultat est trouvé, récupérer le nom du pays
+            if (resultSet.next()) {
+                countryName = resultSet.getString("name");
+            }
+        } finally {
+            // Fermer les ressources
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (preparedStatement != null) {
+                preparedStatement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        }
+
+        return countryName;
+    }
+
+
 }
-
-
-
-
