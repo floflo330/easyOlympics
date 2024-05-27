@@ -3,6 +3,7 @@ package isep.fr.easyolympics;
 import isep.fr.easyolympics.model.Event;
 import isep.fr.easyolympics.model.DatabaseQueries;
 import isep.fr.easyolympics.model.Athlete; // Importez votre classe Athlete
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.collections.FXCollections;
@@ -102,7 +103,19 @@ public class adminEventsDetail {
             // Initialiser les colonnes du tableau des athlètes
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
             surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
-            countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
+
+            // Utiliser une cell factory pour la colonne "Pays" afin d'afficher le nom du pays au lieu de l'ID
+            countryColumn.setCellValueFactory(cellData -> {
+                Athlete athlete = cellData.getValue();
+                String countryName = null;
+                try {
+                    // Obtenir le nom du pays à partir de l'ID du pays de l'athlète
+                    countryName = DatabaseQueries.getCountryById(Integer.parseInt(athlete.getCountry()));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return new SimpleStringProperty(countryName);
+            });
 
             // Charger les athlètes liés au sport de l'événement dans le ChoiceBox
             loadAthletesBySport(event.getSportName());
@@ -110,7 +123,6 @@ public class adminEventsDetail {
             e.printStackTrace();
         }
     }
-
     private void loadAthletesBySport(String sportName) {
         try {
             List<String> athletes = DatabaseQueries.getAthletesBySport(sportName);
@@ -122,10 +134,20 @@ public class adminEventsDetail {
     }
 
     @FXML
-    private void handleAddButton(){
+    private void handleAddButton() {
         try {
-            Main.showAdminEvents();
-        } catch (Exception e) {
+            // Récupérer le nom de l'athlète sélectionné dans le choix box
+            String selectedAthleteName = athleteChoiceBox.getValue();
+
+            // Récupérer l'ID de l'athlète à partir de son nom
+            int athleteId = DatabaseQueries.getAthleteIdByName(selectedAthleteName);
+
+            // Ajouter l'athlète à l'événement dans la base de données
+            DatabaseQueries.addAthleteToEvent(athleteId, event.getIdEvent());
+
+            // Recharger les détails de l'événement pour afficher les nouveaux athlètes ajoutés
+            loadEventDetails();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
