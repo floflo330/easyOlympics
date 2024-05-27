@@ -22,7 +22,6 @@ public class Main extends Application {
         //showAdminSports();
         //showAdminCountries();
         //showAdminHome();
-
     }
 
     public static void showLoginScene() throws Exception {
@@ -126,6 +125,14 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    public static void showCountryResults() throws Exception {
+        Parent root = FXMLLoader.load(Main.class.getResource("countryResults.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("EasyOlympics - Resultats des Pays");
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
+        primaryStage.show();
+    }
 
 
     public static void main(String[] args) {

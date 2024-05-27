@@ -658,6 +658,34 @@ public class DatabaseQueries {
 
         return countryName;
     }
+    public static List<String> getMedals() throws SQLException {
+        List<String> medals = new ArrayList<>();
+        String query = "SELECT \n" +
+                "    c.name AS country_name,\n" +
+                "    e.name AS event_name,\n" +
+                "    m.rank\n" +
+                "FROM \n" +
+                "    medals m\n" +
+                "JOIN \n" +
+                "    countries c ON m.idCountry = c.idCountry\n" +
+                "JOIN \n" +
+                "    events e ON m.idEvent = e.idEvent;\n";
+
+        try (Connection connection = Database.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+
+            while (resultSet.next()) {
+                String countryName = resultSet.getString("country_name");
+                String eventName = resultSet.getString("event_name");
+                String rank = resultSet.getString("rank");
+
+                String medalInfo = String.format("%s,%s,%s", countryName, eventName, rank);
+                medals.add(medalInfo);
+            }
+        }
+        return medals;
+    }
 
 
 }

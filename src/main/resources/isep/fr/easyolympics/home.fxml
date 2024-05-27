@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,9 +17,9 @@
 
 <AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Home">
     <children>
-        <ScrollPane layoutY="62.0" prefHeight="750.0" prefWidth="1227.0">
+        <ScrollPane layoutY="62.0" prefHeight="781.0" prefWidth="1227.0">
             <content>
-                <AnchorPane prefHeight="762.0" prefWidth="1227.0" stylesheets="@styles/style.css">
+                <AnchorPane prefHeight="856.0" prefWidth="1227.0" stylesheets="@styles/style.css">
                     <children>
                         <Text layoutX="15.0" layoutY="65.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="Bonjour !" wrappingWidth="314.0">
                             <font>
@@ -25,8 +27,35 @@
                             </font>
                         </Text>
                         <Line endX="1066.0" layoutX="115.0" layoutY="88.0" startX="-100.0" />
-                        <TextField fx:id="searchField" layoutX="86.0" layoutY="114.0" prefHeight="40.0" prefWidth="314.0" promptText="Rechercher une discipline..." />
-                        <ListView fx:id="userList" layoutX="152.0" layoutY="178.0" prefHeight="496.0" prefWidth="842.0" />
+                        <TextField fx:id="searchField" layoutX="140.0" layoutY="197.0" prefHeight="40.0" prefWidth="314.0" promptText="Rechercher une discipline..." />
+                        <ListView fx:id="userList" layoutX="79.0" layoutY="246.0" prefHeight="496.0" prefWidth="422.0" />
+                        <ListView fx:id="userList1" layoutX="694.0" layoutY="246.0" prefHeight="496.0" prefWidth="422.0" />
+                        <Line endX="461.0" endY="160.0" layoutX="137.0" layoutY="104.0" startX="461.0" startY="599.0" />
+                        <TextField fx:id="searchField1" layoutX="755.0" layoutY="197.0" prefHeight="40.0" prefWidth="314.0" promptText="Rechercher un pays..." />
+                        <TableView fx:id="eventsTable" layoutX="239.0" layoutY="858.0" prefHeight="607.0" prefWidth="719.0">
+                            <columns>
+                                <TableColumn fx:id="nameColumn" prefWidth="149.0" text="NOM" />
+                                <TableColumn fx:id="dateColumn" prefWidth="92.0" text="DATE" />
+                                <TableColumn fx:id="timeColumn" prefWidth="115.0" text="HEURE" />
+                                <TableColumn fx:id="sportColumn" prefWidth="158.0" text="SPORT" />
+                                <TableColumn fx:id="placeColumn" prefWidth="204.0" text="LIEU" />
+                            </columns>
+                        </TableView>
+                        <Text layoutX="133.0" layoutY="179.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="Sports" textAlignment="CENTER" wrappingWidth="314.0">
+                            <font>
+                                <Font name="LEMON MILK Regular Italic" size="39.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="748.0" layoutY="173.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="PAys" textAlignment="CENTER" wrappingWidth="314.0">
+                            <font>
+                                <Font name="LEMON MILK Regular Italic" size="39.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="383.0" layoutY="837.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="Prochains évènements" textAlignment="CENTER" wrappingWidth="431.0">
+                            <font>
+                                <Font name="LEMON MILK Regular Italic" size="39.0" />
+                            </font>
+                        </Text>
                     </children>
                 </AnchorPane>
             </content>
