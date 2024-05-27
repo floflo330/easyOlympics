@@ -15,7 +15,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
-        showHomeScene();
+        //showHomeScene();
+        showAthletes();
         //showAdminUserList();
         //showAdminEvents();
         //showAddAthlete();
@@ -23,6 +24,21 @@ public class Main extends Application {
         //showAdminCountries();
         //showAdminHome();
     }
+
+
+
+    public static void showAthletes() throws Exception {
+        Parent root = FXMLLoader.load(Main.class.getResource("Athletes.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("EasyOlympics - Athletes");
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
+        primaryStage.show();
+    }
+
+
+
+
 
     public static void showLoginScene() throws Exception {
         Parent root = FXMLLoader.load(Main.class.getResource("login.fxml"));

@@ -4,6 +4,8 @@ module isep.fr.easyolympics {
     requires java.sql;
     requires java.desktop;
     requires org.apache.pdfbox;
+    requires itextpdf;
+    requires com.opencsv;
 
     opens isep.fr.easyolympics to javafx.fxml;
     opens isep.fr.easyolympics.controller to javafx.fxml;
