@@ -1,0 +1,61 @@
+Index: src/main/java/isep/fr/easyolympics/SportListCell.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package isep.fr.easyolympics;\r\n\r\nimport javafx.scene.control.ListCell;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.layout.HBox;\r\nimport javafx.scene.text.Text;\r\n\r\nimport java.io.InputStream;\r\n\r\npublic class SportListCell extends ListCell<String> {\r\n    private HBox content;\r\n    private Text name;\r\n    private ImageView imageView;\r\n\r\n    public SportListCell() {\r\n        super();\r\n        name = new Text();\r\n        imageView = new ImageView();\r\n        imageView.setFitHeight(30);\r\n        imageView.setFitWidth(30);\r\n        content = new HBox(imageView, name);\r\n        content.setSpacing(10);\r\n    }\r\n\r\n    @Override\r\n    protected void updateItem(String item, boolean empty) {\r\n        super.updateItem(item, empty);\r\n        if (empty || item == null) {\r\n            setText(null);\r\n            setGraphic(null);\r\n        } else {\r\n            name.setText(item);\r\n            // Try to load the specific image\r\n            try {\r\n                String imagePath = \"/isep/fr/easyolympics/img/\" + item.toLowerCase() + \".png\";\r\n                InputStream imageStream = getClass().getResourceAsStream(imagePath);\r\n                if (imageStream != null) {\r\n                    imageView.setImage(new Image(imageStream));\r\n                } else {\r\n                    // Load the default image if the specific image is not found\r\n                    imageView.setImage(new Image(\"/isep/fr/easyolympics/img/1.png\"));\r\n                }\r\n            } catch (Exception e) {\r\n                e.printStackTrace();\r\n            }\r\n            setGraphic(content);\r\n            setStyle(\"-fx-background-color: #f4f4f4; -fx-padding: 10px; -fx-font-size: 14px; -fx-font-family: 'Arial';\");\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/isep/fr/easyolympics/SportListCell.java b/src/main/java/isep/fr/easyolympics/SportListCell.java
+--- a/src/main/java/isep/fr/easyolympics/SportListCell.java	(revision 4acd176ee2b00321c69ca6f6856ca569611bef3e)
++++ b/src/main/java/isep/fr/easyolympics/SportListCell.java	(date 1716737773757)
+@@ -7,11 +7,14 @@
+ import javafx.scene.text.Text;
+ 
+ import java.io.InputStream;
++import java.util.HashMap;
++import java.util.Map;
+ 
+ public class SportListCell extends ListCell<String> {
+-    private HBox content;
+-    private Text name;
+-    private ImageView imageView;
++    private final HBox content;
++    private final Text name;
++    private final ImageView imageView;
++    private final Map<String, String> imagePaths;
+ 
+     public SportListCell() {
+         super();
+@@ -21,6 +24,13 @@
+         imageView.setFitWidth(30);
+         content = new HBox(imageView, name);
+         content.setSpacing(10);
++
++        // Définir les chemins d'image pour chaque discipline
++        imagePaths = new HashMap<>();
++        imagePaths.put("swimming", "/isep/fr/easyolympics/img/swimming.png");
++        imagePaths.put("basketball", "/isep/fr/easyolympics/img/test.png");
++        imagePaths.put("football", "/isep/fr/easyolympics/img/football.png");
++        // Ajoutez ici les autres disciplines avec leurs chemins d'image correspondants
+     }
+ 
+     @Override
+@@ -31,15 +41,14 @@
+             setGraphic(null);
+         } else {
+             name.setText(item);
+-            // Try to load the specific image
++            // Charger l'image spécifique à la discipline si elle existe, sinon charger l'image par défaut
++            String imagePath = imagePaths.getOrDefault(item.toLowerCase(), "/isep/fr/easyolympics/img/logojo.png");
+             try {
+-                String imagePath = "/isep/fr/easyolympics/img/" + item.toLowerCase() + ".png";
+                 InputStream imageStream = getClass().getResourceAsStream(imagePath);
+                 if (imageStream != null) {
+                     imageView.setImage(new Image(imageStream));
+                 } else {
+-                    // Load the default image if the specific image is not found
+-                    imageView.setImage(new Image("/isep/fr/easyolympics/img/1.png"));
++                    System.err.println("Impossible de charger l'image : " + imagePath);
+                 }
+             } catch (Exception e) {
+                 e.printStackTrace();
