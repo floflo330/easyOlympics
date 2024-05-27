@@ -120,9 +120,9 @@ public class DatabaseQueries {
                     "FROM\n" +
                     "    medals m\n" +
                     "INNER JOIN\n" +
-                    "    countries c ON m.country = c.idCountry\n" +
+                    "    countries c ON m.idCountry = c.idCountry\n" +
                     "GROUP BY\n" +
-                    "    m.country;\n";
+                    "    c.name;";
             stmt = conn.prepareStatement(query);
             rs = stmt.executeQuery();
 

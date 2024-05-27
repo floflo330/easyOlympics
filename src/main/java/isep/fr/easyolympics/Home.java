@@ -53,9 +53,9 @@ public class Home implements Initializable {
             }
         });
 
-        MenuItem profileItem = createMenuItem("Gestion des Athletes", () -> {
+        MenuItem profileItem = createMenuItem("Resultats par Pays", () -> {
             try {
-                Main.showAdminUserList();
+                Main.showCountryResults();
             } catch (Exception e) {
                 e.printStackTrace();
             }

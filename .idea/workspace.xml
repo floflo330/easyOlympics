@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2024_17_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2024_17_29__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2024_17_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2024_17_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2024_17_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2024_17_36__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_10_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_10_04__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Calendar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/CountryResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/CountryResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/Day.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/Day.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/calendar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/calendar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/countryResults.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/countryResults.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -613,7 +609,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716813475621</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716820358523</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1716820358523</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
