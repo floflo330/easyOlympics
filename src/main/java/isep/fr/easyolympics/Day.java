@@ -33,4 +33,13 @@ public class Day {
             // Gérer les erreurs de chargement de la vue Day.fxml
         }
     }
+
+    @FXML
+    private void handleBackButton(){
+        try {
+            Main.showCalendar();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

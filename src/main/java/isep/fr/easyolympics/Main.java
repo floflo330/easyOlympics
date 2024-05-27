@@ -114,9 +114,6 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
-
-
     public static void showAdminEventsDetail(Event event) throws Exception {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("adminEventsDetail.fxml"));
         Parent root = loader.load();
@@ -128,8 +125,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
-
-
 
 
 
