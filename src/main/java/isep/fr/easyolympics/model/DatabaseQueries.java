@@ -481,7 +481,7 @@ public class DatabaseQueries {
                     int id = rs.getInt("idAthlete");
                     String name = rs.getString("name");
                     String surname = rs.getString("surname");
-                    String country = rs.getString("country");
+                    String country = rs.getString("idCountry");
                     athletes.add(new Athlete(id, name, surname, country));
                 }
             }

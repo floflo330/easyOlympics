@@ -80,7 +80,7 @@
                   <TableColumn fx:id="countryColumn" prefWidth="157.0" text="PAYS" />
               </columns>
             </TableView>
-            <Button fx:id="addAthleteButton" layoutX="926.0" layoutY="685.0" mnemonicParsing="false" text="Ajouter" textFill="WHITE" />
+            <Button fx:id="addAthleteButton" layoutX="926.0" layoutY="685.0" mnemonicParsing="false" text="Ajouter" textFill="WHITE" onAction="#handleAddButton" />
             <ChoiceBox fx:id="athleteChoiceBox" layoutX="695.0" layoutY="634.0" prefHeight="40.0" prefWidth="317.0" />
             <Text layoutX="698.0" layoutY="624.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" styleClass="title" text="Ajouter un Athlete" wrappingWidth="317.0">
                <font>

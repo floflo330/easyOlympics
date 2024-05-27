@@ -15,7 +15,7 @@ import java.util.List;
 
 public class adminEventsDetail {
     @FXML
-    private TableView<Athlete> athletesTable; // Changez le type pour correspondre à Athlete
+    private TableView<Athlete> athletesTable;
 
     @FXML
     private TableColumn<Athlete, String> nameColumn;
@@ -122,6 +122,15 @@ public class adminEventsDetail {
     }
 
     @FXML
+    private void handleAddButton(){
+        try {
+            Main.showAdminEvents();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void handleBackButton(){
         try {
             Main.showAdminEvents();
@@ -129,4 +138,7 @@ public class adminEventsDetail {
             e.printStackTrace();
         }
     }
+
+
+
 }
