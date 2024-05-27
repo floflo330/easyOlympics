@@ -22,7 +22,6 @@ public class Main extends Application {
         //showAdminSports();
         //showAdminCountries();
         //showAdminHome();
-
     }
 
     public static void showLoginScene() throws Exception {
