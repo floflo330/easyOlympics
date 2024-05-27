@@ -73,6 +73,15 @@ public class adminHome implements Initializable {
             }
         });
 
+        MenuItem resultsItem = new MenuItem("Gestion des resultats");
+        resultsItem.setOnAction(event -> {
+            try {
+                Main.showAdminResults();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
         MenuItem exitItem = new MenuItem("Quitter l'administration");
         exitItem.setOnAction(event -> {
             try {
@@ -82,7 +91,9 @@ public class adminHome implements Initializable {
             }
         });
 
-        contextMenu.getItems().addAll(homeItem, profileItem, eventsItem, sportsItem, countriesItem, exitItem);
+
+
+        contextMenu.getItems().addAll(homeItem, profileItem, eventsItem, sportsItem, countriesItem, resultsItem, exitItem);
 
 
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {

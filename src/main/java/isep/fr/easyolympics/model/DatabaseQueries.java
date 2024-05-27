@@ -504,6 +504,51 @@ public class DatabaseQueries {
         return athletes;
     }
 
+    public static List<String> getEventNames() throws SQLException {
+        List<String> eventNames = new ArrayList<>();
+        Connection connection = Database.getConnection();
+        String query = "SELECT name FROM events";
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+            while (resultSet.next()) {
+                eventNames.add(resultSet.getString("name"));
+            }
+        }
+        return eventNames;
+    }
+
+    public static List<String> getAthletesForEvent(String eventName) throws SQLException {
+        List<String> athleteNames = new ArrayList<>();
+        Connection connection = Database.getConnection();
+        String query = "SELECT a.name\n" +
+                "FROM athletes a\n" +
+                "JOIN events_athletes ea ON a.idAthlete = ea.idAthlete\n" +
+                "JOIN events e ON ea.idEvent = e.idEvent\n" +
+                "WHERE e.name = ?\n";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, eventName);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    athleteNames.add(resultSet.getString("name"));
+                }
+            }
+        }
+        return athleteNames;
+    }
+
+    // Method to save result
+    public static void saveResult(String athleteName, String eventName, String score, String time) throws SQLException {
+        Connection connection = Database.getConnection();
+        String query = "INSERT INTO results (idAthlete, idEvent, score, time) VALUES ((SELECT idAthlete FROM athletes WHERE name = ?), (SELECT idEvent FROM events WHERE name = ?), ?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, athleteName);
+            preparedStatement.setString(2, eventName);
+            preparedStatement.setString(3, score);
+            preparedStatement.setString(4, time);
+            preparedStatement.executeUpdate();
+        }
+    }
+
 }
 
 
