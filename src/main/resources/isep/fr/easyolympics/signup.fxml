@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Signup">
+<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.Signup">
     <children>
         <AnchorPane layoutY="59.0" prefHeight="748.0" prefWidth="1227.0" stylesheets="@styles/style.css">
             <children>
@@ -90,14 +100,6 @@
             <Spinner editable="true" layoutX="722.0" layoutY="284.0" prefHeight="29.0" prefWidth="217.0" />
             </children></AnchorPane>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9f254e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
-        <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
-            <children>
-                <Text id="labelNomPage" fx:id="labelNomPage" layoutX="8.0" layoutY="20.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Administration">
-                    <font>
-                        <Font name="Lemon/Milk" size="12.0" />
-                    </font></Text>
-            </children>
-        </Pane>
         <Button layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
         <ImageView fitHeight="59.0" fitWidth="43.0" layoutX="1170.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
             <image>

@@ -5,7 +5,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -22,18 +21,10 @@
                 </Text>
                 <Line endX="1066.0" layoutX="115.0" layoutY="88.0" startX="-100.0" />
             <ListView id="userList" fx:id="userList" layoutX="181.0" layoutY="122.0" prefHeight="549.0" prefWidth="865.0" />
-            <Button fx:id="addAthlete" layoutX="868.0" layoutY="692.0" mnemonicParsing="false" text="Ajouter Un Athlete" onAction="#handleButtonAddAthlete"/>
+            <Button fx:id="addAthlete" layoutX="868.0" layoutY="692.0" mnemonicParsing="false" onAction="#handleButtonAddAthlete" text="Ajouter Un Athlete" />
             <Button fx:id="deleteAthlete" layoutX="562.0" layoutY="692.0" mnemonicParsing="false" text="Supprimer L'athelete Sélectionné" />
             </children></AnchorPane>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bf154e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
-        <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
-            <children>
-                <Text id="labelNomPage" fx:id="labelNomPage" layoutX="8.0" layoutY="20.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Administration">
-                    <font>
-                        <Font name="Lemon/Milk" size="12.0" />
-                    </font></Text>
-            </children>
-        </Pane>
         <Button fx:id="menuButton" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
         <ImageView fitHeight="59.0" fitWidth="43.0" layoutX="1170.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
             <image>
