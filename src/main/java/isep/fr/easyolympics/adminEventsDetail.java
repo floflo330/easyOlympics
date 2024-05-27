@@ -48,6 +48,9 @@ public class adminEventsDetail {
     private Button addButton;
 
     @FXML
+    private Button backButton;
+
+    @FXML
     private ChoiceBox<String> athleteChoiceBox;
 
     @FXML
@@ -57,6 +60,14 @@ public class adminEventsDetail {
     private Button menuButton;
 
     private Event event;
+
+
+
+    public void initialize() {
+        // Initialisation des Spinners
+        hourSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 23, 0));
+        minuteSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59, 0));
+    }
 
     public void setEvent(Event event) {
         this.event = event;
@@ -72,7 +83,13 @@ public class adminEventsDetail {
         placeField.setText(event.getPlace());
         sportChoiceBox.setValue(event.getSportName());
 
-        // Charger les athlètes associés à cet événement
+        if (hourSpinner.getValueFactory() == null) {
+            hourSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 23, 0));
+        }
+        if (minuteSpinner.getValueFactory() == null) {
+            minuteSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59, 0));
+        }
+
         loadAthletes();
     }
 
@@ -100,6 +117,15 @@ public class adminEventsDetail {
             athleteChoiceBox.getItems().clear();
             athleteChoiceBox.getItems().addAll(athletes);
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleBackButton(){
+        try {
+            Main.showAdminEvents();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -22,8 +22,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javafx.fxml.Initializable;
 
-public class adminEvents extends Application{
-
+public class adminEvents extends Application {
 
 
     @FXML
@@ -190,6 +189,7 @@ public class adminEvents extends Application{
         }
 
     }
+
     private void loadSports() {
         try {
             List<String> sports = DatabaseQueries.getSports();
@@ -230,6 +230,7 @@ public class adminEvents extends Application{
             }
         }
     }
+
     @FXML
     private void handleDeleteEvent() {
         Event selectedEvent = eventsTable.getSelectionModel().getSelectedItem();
@@ -278,27 +279,25 @@ public class adminEvents extends Application{
             e.printStackTrace();
         }
     }
+
     private void showEventDetails(Event event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("adminEventsDetail.fxml"));
-            Parent root = loader.load();
-
-            // Obtenir le contrôleur et passer l'événement sélectionné
-            adminEventsDetail controller = loader.getController();
-            controller.setEvent(event);
-
-            Stage stage = new Stage();
-            stage.setTitle("Détails de l'événement");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("adminEventsDetail.fxml"));
+//            Parent root = loader.load();
+//
+//            // Obtenir le contrôleur et passer l'événement sélectionné
+//            adminEventsDetail controller = loader.getController();
+//            controller.setEvent(event);
+//
+//            Stage stage = new Stage();
+//            stage.setTitle("Détails de l'événement");
+//            stage.setScene(new Scene(root));
+//            stage.show();
+            Main.showAdminEventsDetail(event);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+
+
     }
-
-
-
-
-
-
 }

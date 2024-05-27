@@ -1,5 +1,6 @@
 package isep.fr.easyolympics;
 
+import isep.fr.easyolympics.model.Event;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -102,6 +103,20 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("EasyOlympics - Gestion des Evènements");
         primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
+        primaryStage.show();
+    }
+
+
+
+    public static void showAdminEventsDetail(Event event) throws Exception {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("adminEventsDetail.fxml"));
+        Parent root = loader.load();
+
+        adminEventsDetail controller = loader.getController();
+        controller.setEvent(event);
+
+        primaryStage.setTitle("Détails de l'événement");
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
