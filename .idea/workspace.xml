@@ -5,28 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
-      <change afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/AdminMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_14_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_14_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_16_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_16_53__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/athletes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/countries.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/event.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/results.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/sports.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_21_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_21_06__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/AddAthlete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/AddAthlete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Athletes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Athletes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Calendar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/CountryMedals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/CountryMedals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/CountryResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/CountryResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminCountries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminCountries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminEventsDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminEventsDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminSports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminSports.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminUserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminUserList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/calendar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/calendar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/countryResults.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/countryResults.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminHome.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +83,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/flore/IdeaProjects/easyOlympics/src/main/java/isep/fr/easyolympics",
-    "last_opened_file_path": "C:/Users/flore/IdeaProjects/easyOlympics/src/main/resources/isep/fr/easyolympics",
+    "last_opened_file_path": "C:/Users/flore/IdeaProjects/easyOlympics/src/main/resources/isep/fr/easyolympics/img",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -120,6 +107,7 @@
       <recent name="isep.fr.easyolympics" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\flore\IdeaProjects\easyOlympics\src\main\resources\isep\fr\easyolympics\img" />
       <recent name="C:\Users\flore\IdeaProjects\easyOlympics\src\main\resources\isep\fr\easyolympics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -658,7 +646,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716846904026</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716885210887</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1716885210887</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
