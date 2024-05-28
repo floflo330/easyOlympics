@@ -15,8 +15,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
-        //showHomeScene();
-        showAthletes();
+        showHomeScene();
+        //showAthletes();
         //showAdminUserList();
         //showAdminEvents();
         //showAddAthlete();
