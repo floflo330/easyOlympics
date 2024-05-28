@@ -50,12 +50,12 @@
                   <Font name="LEMON MILK Light" size="39.0" />
                </font>
             </Text>
-            <Button layoutX="231.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des athletes" />
-            <Button layoutX="504.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des évènements" />
-            <Button layoutX="804.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des Sports" />
-            <Button layoutX="242.0" layoutY="611.0" mnemonicParsing="false" text="Gestion des pays" />
-            <Button layoutX="498.0" layoutY="611.0" mnemonicParsing="false" text="Inscription des resultats" />
-            <Button layoutX="782.0" layoutY="611.0" mnemonicParsing="false" text="Quitter l'administration" />
+            <Button fx:id="athletesButton" layoutX="231.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des athletes" onAction="#handleAthletesButton"/>
+            <Button fx:id="eventButton" layoutX="504.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des évènements" onAction="#handleEventButton"/>
+            <Button fx:id="sportsButton" layoutX="804.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des Sports" onAction="#handleSportsButton"/>
+            <Button fx:id="countriesButton" layoutX="242.0" layoutY="611.0" mnemonicParsing="false" text="Gestion des pays" onAction="#handleCountriesButton"/>
+            <Button fx:id="resultsButton" layoutX="498.0" layoutY="611.0" mnemonicParsing="false" text="Inscription des resultats" onAction="#handleResultsButton"/>
+            <Button fx:id="exitButton" layoutX="782.0" layoutY="611.0" mnemonicParsing="false" text="Quitter l'administration" onAction="#handleExitButton"/>
             <ImageView fitHeight="111.0" fitWidth="108.0" layoutX="274.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/athletes.png" />

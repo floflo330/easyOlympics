@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/athletes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/countries.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/event.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/exit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/results.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/img/sports.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_21_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_05_2024_21_06__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminHome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminHome.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,14 +255,6 @@
       <workItem from="1716630574822" duration="14844000" />
       <workItem from="1716660750222" duration="60000" />
       <workItem from="1716660843416" duration="11701000" />
-    </task>
-    <task id="LOCAL-00001" summary="Add login.fxml">
-      <option name="closed" value="true" />
-      <created>1713363398586</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1713363398586</updated>
     </task>
     <task id="LOCAL-00002" summary="Add login.fxml">
       <option name="closed" value="true" />
@@ -654,7 +640,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716885210887</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Modif">
+      <option name="closed" value="true" />
+      <created>1716887341898</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1716887341898</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
