@@ -5,13 +5,25 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Day {
 
-    // Méthode appelée lorsque l'utilisateur clique sur un bouton ou un jour du calendrier
+
+
+    @FXML
+    private Button menuButton;
+    @FXML
+    private ContextMenu contextMenu;
+    @FXML
+    public void initialize() {
+        Menu.setupMenu(menuButton);
+
+    }
     @FXML
     private void handleCalendarButtonClick(ActionEvent event) {
         try {

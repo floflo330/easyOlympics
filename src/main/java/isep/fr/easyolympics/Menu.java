@@ -1,26 +1,98 @@
 package isep.fr.easyolympics;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class Menu implements Initializable {
+public class Menu {
+
 
     @FXML
-    private Button menuButton;
+    private static Button menuButton;
 
-    private ContextMenu contextMenu;
+    private static ContextMenu contextMenu;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        contextMenu = new ContextMenu();
+    public static void setupMenuAdmin(Button menuButton) {
+        ContextMenu contextMenu = new ContextMenu();
+
+        MenuItem homeItem = new MenuItem("Accueil Administration");
+        homeItem.setOnAction(event -> {
+            try {
+                Main.showAdminHome();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem profileItem = new MenuItem("Gestion des Athletes");
+        profileItem.setOnAction(event -> {
+            try {
+                Main.showAdminUserList();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem eventsItem = new MenuItem("Gestion des évènements");
+        eventsItem.setOnAction(event -> {
+            try {
+                Main.showAdminEvents();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem sportsItem = new MenuItem("Gestion des disciplines");
+        sportsItem.setOnAction(event -> {
+            try {
+                Main.showAdminSports();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem countriesItem = new MenuItem("Gestion des pays");
+        countriesItem.setOnAction(event -> {
+            try {
+                Main.showAdminCountries();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem resultsItem = new MenuItem("Gestion des resultats");
+        resultsItem.setOnAction(event -> {
+            try {
+                Main.showAdminResults();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        MenuItem exitItem = new MenuItem("Quitter l'administration");
+        exitItem.setOnAction(event -> {
+            try {
+                Main.showHomeScene();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        contextMenu.getItems().addAll(homeItem, profileItem, eventsItem, sportsItem, countriesItem, resultsItem, exitItem);
+
+        menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            if (event.getButton() == MouseButton.PRIMARY) {
+                contextMenu.show(menuButton, event.getScreenX(), event.getScreenY());
+            }
+        });
+    }
+
+    public static void setupMenu(Button menuButton) {
+        ContextMenu contextMenu = new ContextMenu();
 
         MenuItem homeItem = new MenuItem("Accueil");
         homeItem.setOnAction(event -> {
@@ -31,7 +103,7 @@ public class Menu implements Initializable {
             }
         });
 
-        MenuItem profileItem = new MenuItem("Resultats par Pays");
+        MenuItem profileItem = new MenuItem("Résultats par Pays");
         profileItem.setOnAction(event -> {
             try {
                 Main.showCountryResults();
@@ -40,8 +112,8 @@ public class Menu implements Initializable {
             }
         });
 
-        MenuItem logoutItem = new MenuItem("Calendrier");
-        logoutItem.setOnAction(event -> {
+        MenuItem calendarItem = new MenuItem("Calendrier");
+        calendarItem.setOnAction(event -> {
             try {
                 Main.showCalendar();
             } catch (Exception e) {
@@ -49,8 +121,8 @@ public class Menu implements Initializable {
             }
         });
 
-        MenuItem adminItem = new MenuItem("Administration");
-        logoutItem.setOnAction(event -> {
+        MenuItem eventsItem = new MenuItem("Administration");
+        eventsItem.setOnAction(event -> {
             try {
                 Main.showAdminHome();
             } catch (Exception e) {
@@ -58,7 +130,7 @@ public class Menu implements Initializable {
             }
         });
 
-        contextMenu.getItems().addAll(homeItem, profileItem, logoutItem, adminItem);
+        contextMenu.getItems().addAll(homeItem, profileItem, calendarItem, eventsItem);
 
         menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (event.getButton() == MouseButton.PRIMARY) {

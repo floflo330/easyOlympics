@@ -9,6 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -22,6 +24,11 @@ public class CountryResults extends Application {
         launch(args);
     }
 
+
+    @FXML
+    private Button menuButton;
+    @FXML
+    private ContextMenu contextMenu;
     @FXML
     public BarChart<String, Number> barChart;
 
@@ -58,6 +65,7 @@ public class CountryResults extends Application {
 
     @FXML
     public void initialize() {
+        Menu.setupMenu(menuButton);
         try {
             // Set up the columns in the table
             countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));

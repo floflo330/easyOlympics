@@ -47,9 +47,9 @@ public class Home implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initializeContextMenu();
+        //initializeContextMenu();
+        Menu.setupMenu(menuButton);
         loadAthletesFromDatabase();
-        configureMenuButton();
         configureSearchField();
         try {
             List<String> sports = DatabaseQueries.getCountries();
@@ -73,44 +73,6 @@ public class Home implements Initializable {
 
     }
 
-    private void initializeContextMenu() {
-        contextMenu = new ContextMenu();
-
-        MenuItem homeItem = createMenuItem("Accueil", () -> {
-            try {
-                Main.showHomeScene();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        MenuItem profileItem = createMenuItem("Resultats par Pays", () -> {
-            try {
-                Main.showCountryResults();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        MenuItem calendarItem = createMenuItem("Calendrier", () -> {
-            try {
-                Main.showCalendar();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        MenuItem eventsItem = createMenuItem("Administration", () -> {
-            try {
-                Main.showAdminHome();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        contextMenu.getItems().addAll(homeItem, profileItem, calendarItem, eventsItem);
-    }
-
     private MenuItem createMenuItem(String text, Runnable action) {
         MenuItem menuItem = new MenuItem(text);
         menuItem.setOnAction(event -> action.run());
@@ -131,13 +93,6 @@ public class Home implements Initializable {
         }
     }
 
-    private void configureMenuButton() {
-        menuButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            if (event.getButton() == MouseButton.PRIMARY) {
-                contextMenu.show(menuButton, event.getScreenX(), event.getScreenY());
-            }
-        });
-    }
 
     private void configureSearchField() {
         searchField.textProperty().addListener((observable, oldValue, newValue) -> {

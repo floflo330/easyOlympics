@@ -40,45 +40,10 @@ public class Athletes implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initializeContextMenu();
+        Menu.setupMenu(menuButton);
         loadMedalsFromDatabase();
-        configureMenuButton();
         configureSearchField();
         configureDownloadButton();
-    }
-
-    private void initializeContextMenu() {
-        contextMenu = new ContextMenu();
-
-        MenuItem homeItem = createMenuItem("Accueil", () -> {
-            try {
-                Main.showHomeScene();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        MenuItem profileItem = createMenuItem("Gestion des Athletes", () -> {
-            try {
-                Main.showAdminUserList();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        MenuItem eventsItem = createMenuItem("Gestion des évènements", () -> {
-            // Action pour gérer les évènements
-        });
-
-        MenuItem calendarItem = createMenuItem("Calendrier", () -> {
-            try {
-                Main.showCalendar();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        contextMenu.getItems().addAll(homeItem, profileItem, eventsItem, calendarItem);
     }
 
     private MenuItem createMenuItem(String text, Runnable action) {

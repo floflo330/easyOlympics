@@ -65,9 +65,8 @@ public class Calendar {
 
     @FXML
     public void initialize() {
-        // Assurez-vous que la zone de texte est initialisée
         eventTextArea = new TextArea();
-
+        Menu.setupMenu(menuButton);
 
 
     }

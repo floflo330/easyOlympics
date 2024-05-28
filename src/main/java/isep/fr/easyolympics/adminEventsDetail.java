@@ -65,6 +65,7 @@ public class adminEventsDetail {
 
 
     public void initialize() {
+        Menu.setupMenuAdmin(menuButton);
         // Initialisation des Spinners
         hourSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 23, 0));
         minuteSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59, 0));
