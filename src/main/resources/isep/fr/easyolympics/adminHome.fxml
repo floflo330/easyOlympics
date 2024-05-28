@@ -50,12 +50,12 @@
                   <Font name="LEMON MILK Light" size="39.0" />
                </font>
             </Text>
-            <Button fx:id="athletesButton" layoutX="231.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des athletes" onAction="#handleAthletesButton"/>
-            <Button fx:id="eventButton" layoutX="504.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des évènements" onAction="#handleEventButton"/>
-            <Button fx:id="sportsButton" layoutX="804.0" layoutY="381.0" mnemonicParsing="false" text="Gestion des Sports" onAction="#handleSportsButton"/>
-            <Button fx:id="countriesButton" layoutX="242.0" layoutY="611.0" mnemonicParsing="false" text="Gestion des pays" onAction="#handleCountriesButton"/>
-            <Button fx:id="resultsButton" layoutX="498.0" layoutY="611.0" mnemonicParsing="false" text="Inscription des resultats" onAction="#handleResultsButton"/>
-            <Button fx:id="exitButton" layoutX="782.0" layoutY="611.0" mnemonicParsing="false" text="Quitter l'administration" onAction="#handleExitButton"/>
+            <Button fx:id="athletesButton" layoutX="231.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleAthletesButton" text="Gestion des athletes" />
+            <Button fx:id="eventButton" layoutX="504.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleEventButton" text="Gestion des évènements" />
+            <Button fx:id="sportsButton" layoutX="804.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleSportsButton" text="Gestion des Sports" />
+            <Button fx:id="countriesButton" layoutX="242.0" layoutY="611.0" mnemonicParsing="false" onAction="#handleCountriesButton" text="Gestion des pays" />
+            <Button fx:id="resultsButton" layoutX="498.0" layoutY="611.0" mnemonicParsing="false" onAction="#handleResultsButton" text="Inscription des resultats" />
+            <Button fx:id="exitButton" layoutX="782.0" layoutY="611.0" mnemonicParsing="false" onAction="#handleExitButton" text="Quitter l'administration" />
             <ImageView fitHeight="111.0" fitWidth="108.0" layoutX="274.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/athletes.png" />
@@ -87,7 +87,7 @@
                </image>
             </ImageView>
             </children></AnchorPane>
-        <Button fx:id="menuButton" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
+        <Button fx:id="menuButton" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" styleClass="button-menu" text="☰" textAlignment="CENTER" />
         <ImageView fitHeight="59.0" fitWidth="43.0" layoutX="1170.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/logojo.png" />

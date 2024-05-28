@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.CalendarNew">
+    <children>
+        <AnchorPane layoutX="-8.0" layoutY="59.0" prefHeight="748.0" prefWidth="1227.0" stylesheets="@styles/style.css">
+            <children>
+                <Text layoutX="28.0" layoutY="72.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="Calendrier" wrappingWidth="237.0">
+                    <font>
+                        <Font name="LEMON MILK Regular" size="39.0" />
+                    </font>
+                </Text>
+                <Line endX="1066.0" layoutX="115.0" layoutY="88.0" startX="-80.0" />
+                <Text layoutX="493.0" layoutY="378.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" styleClass="form-label" wrappingWidth="158.7265625">
+                    <font>
+                        <Font name="LEMON MILK Bold" size="17.0" />
+                    </font>
+                </Text>
+                <GridPane layoutX="769.0" layoutY="329.0" prefHeight="254.0" prefWidth="326.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+                <Rectangle arcHeight="20.0" arcWidth="5.0" fill="WHITE" height="78.0" layoutX="351.0" layoutY="151.0" stroke="BLACK" strokeType="INSIDE" width="526.0" />
+                <Text layoutX="346.0" layoutY="202.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="du 26 juillet au 11 aout 2024" textAlignment="CENTER" wrappingWidth="536.2000122070312">
+                    <font>
+                        <Font name="LEMON MILK Regular" size="39.0" />
+                    </font>
+                </Text>
+                <Text layoutX="453.0" layoutY="694.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" wrappingWidth="536.2000122070312">
+                    <font>
+                        <Font name="LEMON MILK Regular" size="14.0" />
+                    </font>
+                </Text>
+            <DatePicker fx:id="datePicker" layoutX="665.0" layoutY="260.0" />
+            <Text layoutX="352.0" layoutY="290.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 25;" styleClass="title" text="Choisir une date :" wrappingWidth="306.0">
+               <font>
+                  <Font name="LEMON MILK Regular" size="39.0" />
+               </font>
+            </Text>
+            <TableView fx:id="eventsTable" layoutX="249.0" layoutY="346.0" prefHeight="293.0" prefWidth="719.0">
+               <columns>
+                  <TableColumn fx:id="nameColumn" prefWidth="149.0" text="NOM" />
+                  <TableColumn fx:id="dateColumn" prefWidth="92.0" text="DATE" />
+                  <TableColumn fx:id="timeColumn" prefWidth="115.0" text="HEURE" />
+                  <TableColumn fx:id="sportColumn" prefWidth="158.0" text="SPORT" />
+                  <TableColumn fx:id="placeColumn" prefWidth="204.0" text="LIEU" />
+               </columns>
+            </TableView>
+            </children></AnchorPane>
+        <Rectangle arcWidth="5.0" height="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1227.0">
+            <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2645380198955536" green="0.4526315927505493" blue="0.2313450276851654" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.37828946113586426" green="0.7105262875556946" blue="0.472423255443573" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+            </fill>
+        </Rectangle>
+        <Button fx:id="menuButton" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" styleClass="button-menu" text="☰" textAlignment="CENTER" />
+        <ImageView fitHeight="59.0" fitWidth="43.0" layoutX="1170.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@img/logojo.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

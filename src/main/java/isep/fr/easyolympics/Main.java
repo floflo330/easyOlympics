@@ -59,7 +59,7 @@ public class Main extends Application {
     }
 
     public static void showCalendar() throws Exception {
-        Parent root = FXMLLoader.load(Main.class.getResource("calendar.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("calendarNew.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("EasyOlympics - Calendrier");

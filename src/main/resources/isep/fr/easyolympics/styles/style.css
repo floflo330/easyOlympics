@@ -48,8 +48,7 @@
     -fx-background-color:  #bf154e;
     -fx-background-radius: 12;
     -fx-cursor: hand;
-
-
+    -fx-text-fill: #fff;
 }
 
 .boutonCarre {
@@ -130,14 +129,6 @@
 
 
 
-
-
-
-
-
-
-
-
 .list-cell {
     -fx-background-color: #f4f4f4;
     -fx-padding: 10px;
@@ -153,9 +144,8 @@
 
 .button-menu {
     -fx-background-color: #fff;
-    -fx-background-radius: 15;
     -fx-border-style: none;
-    -fx-font-size: 18px;
+    -fx-text-fill: #000000;
 }
 
 .list-view {

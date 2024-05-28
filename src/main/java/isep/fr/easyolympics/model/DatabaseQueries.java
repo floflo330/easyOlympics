@@ -204,31 +204,40 @@ public class DatabaseQueries {
 
         return sports;
     }
-    public static List<String> getEventsForDay(int day) throws SQLException {
-        List<String> events = new ArrayList<>();
+    public static List<Event> getEventsForDay(String date) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
+        List<Event> events = new ArrayList<>();
+
         try {
             conn = Database.getConnection();
-            String query = "SELECT name, description FROM events WHERE event_day = ?";
+            String query = "SELECT e.idEvent, e.name, e.place, e.date, e.time, e.idSport, s.name AS sportName " +
+                    "FROM events e " +
+                    "JOIN sports s ON e.idSport = s.idSport " +
+                    "WHERE e.date = ?";
             stmt = conn.prepareStatement(query);
-            stmt.setInt(1, day);
+            stmt.setDate(1, java.sql.Date.valueOf(date)); // Convertir la date String en java.sql.Date
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                String eventName = rs.getString("name");
-                String eventDescription = rs.getString("description");
-                String eventInfo = String.format("Event: %s - Description: %s", eventName, eventDescription);
-                events.add(eventInfo);
+                Event event = new Event(
+                        rs.getInt("idEvent"),
+                        rs.getString("name"),
+                        rs.getString("place"),
+                        rs.getString("date"),
+                        rs.getString("time"),
+                        rs.getInt("idSport"),
+                        rs.getString("sportName")
+                );
+                events.add(event);
             }
         } finally {
             if (rs != null) rs.close();
             if (stmt != null) stmt.close();
             if (conn != null) conn.close();
         }
-
         return events;
     }
 

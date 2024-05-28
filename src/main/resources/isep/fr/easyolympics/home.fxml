@@ -65,6 +65,6 @@
                 <Image url="@img/logojo.png" />
             </image>
         </ImageView>
-        <Button fx:id="menuButton" layoutX="29.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-style: none;" text="☰" textAlignment="CENTER" />
+        <Button fx:id="menuButton" layoutX="29.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #FFF; -fx-background-radius: 15; -fx-border-style: none;" styleClass="button-menu" text="☰" textAlignment="CENTER" />
     </children>
 </AnchorPane>
