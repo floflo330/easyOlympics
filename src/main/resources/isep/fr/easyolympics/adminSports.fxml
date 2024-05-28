@@ -8,6 +8,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -15,6 +18,29 @@
 
 <AnchorPane stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.fr.easyolympics.adminSports">
     <children>
+      <Rectangle arcWidth="5.0" height="59.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1227.0">
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="0.7919621749408984" endY="0.2056737588652484" startX="0.018912529550827423" startY="0.044917257683215195">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5254902243614197" green="0.1411764770746231" blue="0.2823529541492462" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6205291373383531">
+                     <color>
+                        <Color red="0.7697368264198303" green="0.1888706088066101" blue="0.2082328200340271" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5855262875556946" green="0.07996771484613419" blue="0.23163528740406036" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
         <AnchorPane layoutY="58.0" prefHeight="762.0" prefWidth="1227.0" stylesheets="@styles/style.css">
             <children>
                 <Text layoutX="15.0" layoutY="67.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="Gérer les sports" wrappingWidth="420.0">
@@ -28,21 +54,20 @@
                 <TableColumn fx:id="sportColumn" prefWidth="283.0" text="SPORTS" />
               </columns>
             </TableView>
-            <Button fx:id="addSport" layoutX="475.0" layoutY="284.0" mnemonicParsing="false" text="Ajouter" textFill="WHITE" onAction="#handleAddSport" />
+            <Button fx:id="addSport" layoutX="475.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleAddSport" text="Ajouter" textFill="WHITE" />
             <TextField fx:id="sportField" layoutX="244.0" layoutY="229.0" prefHeight="40.0" prefWidth="317.0" />
             <Text layoutX="244.0" layoutY="212.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="title" text="Ajouter Un sport" wrappingWidth="317.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
                </font>
             </Text>
-            <Button fx:id="deleteSport" layoutX="287.0" layoutY="367.0" mnemonicParsing="false" text="Supprimer le sport sélectionné" textFill="WHITE" onAction="#handleDeleteSport" />
+            <Button fx:id="deleteSport" layoutX="287.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleDeleteSport" text="Supprimer le sport sélectionné" textFill="WHITE" />
             <Text layoutX="244.0" layoutY="351.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="title" text="Supprimer Un sport" wrappingWidth="317.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
                </font>
             </Text>
             </children></AnchorPane>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bf154e" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0" />
         <Pane layoutX="78.0" layoutY="15.0" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-padding: 10;">
             <children>
 

@@ -164,7 +164,7 @@
                         <Font name="LEMON MILK Regular" size="39.0" />
                     </font>
                 </Text>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="78.0" layoutX="367.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="526.0" />
+                <Rectangle arcHeight="20.0" arcWidth="5.0" fill="WHITE" height="78.0" layoutX="367.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="526.0" />
                 <Text layoutX="362.0" layoutY="203.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="title" text="du 26 juillet au 11 aout 2024" textAlignment="CENTER" wrappingWidth="536.2000122070312">
                     <font>
                         <Font name="LEMON MILK Regular" size="39.0" />
@@ -181,7 +181,7 @@
                     </font>
                 </Text>
             </children></AnchorPane>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" height="59.0" stroke="BLACK" strokeType="INSIDE" width="1227.0">
+        <Rectangle arcWidth="5.0" height="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1227.0">
             <fill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
