@@ -138,19 +138,28 @@ public class adminResults implements Initializable {
         String secondScore = secondScoreField.getText();
         String thirdScore = thirdScoreField.getText();
 
-        if (selectedEvent == null || firstAthlete == null || secondAthlete == null || thirdAthlete == null) {
-            showAlert("Erreur", "Veuillez sélectionner un événement et trois athlètes.");
+        if (selectedEvent == null || firstAthlete == null || secondAthlete == null) {
+            showAlert("Erreur", "Veuillez sélectionner un événement et au moins deux athlètes.");
             return;
         }
 
         try {
             DatabaseQueries.saveResult(firstAthlete, selectedEvent, firstScore, firstTime);
             DatabaseQueries.saveResult(secondAthlete, selectedEvent, secondScore, secondTime);
-            DatabaseQueries.saveResult(thirdAthlete, selectedEvent, thirdScore, thirdTime);
-            showAlert("Succès", "Les résultats ont été sauvegardés avec succès.");
+            if (thirdAthlete != null) {
+                DatabaseQueries.saveResult(thirdAthlete, selectedEvent, thirdScore, thirdTime);
+            }
+
+            DatabaseQueries.addMedal("Gold", firstAthlete, selectedEvent);
+            DatabaseQueries.addMedal("Silver", secondAthlete, selectedEvent);
+            if (thirdAthlete != null) {
+                DatabaseQueries.addMedal("Bronze", thirdAthlete, selectedEvent);
+            }
+
+            showAlert("Succès", "Les résultats et les médailles ont été sauvegardés avec succès.");
         } catch (SQLException e) {
             e.printStackTrace();
-            showAlert("Erreur", "Une erreur s'est produite lors de la sauvegarde des résultats.");
+            showAlert("Erreur", "Une erreur s'est produite lors de la sauvegarde des résultats et des médailles.");
         }
     }
 

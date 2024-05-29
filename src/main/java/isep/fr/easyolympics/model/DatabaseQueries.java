@@ -696,5 +696,26 @@ public class DatabaseQueries {
         return medals;
     }
 
+    public static void addMedal(String rank, String athlete, String event) throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = Database.getConnection();
+            String query = "INSERT INTO medals (rank, idCountry, idEvent) " +
+                    "VALUES (?, (SELECT idCountry FROM athletes WHERE name = ?), " +
+                    "(SELECT idEvent FROM events WHERE name = ?))";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, rank);
+            stmt.setString(2, athlete);
+            stmt.setString(3, event);
+            stmt.executeUpdate();
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+
+
 
 }
