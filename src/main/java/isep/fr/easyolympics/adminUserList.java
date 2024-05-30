@@ -11,11 +11,6 @@ import javafx.stage.Stage;
 import isep.fr.easyolympics.model.DatabaseQueries;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-
-
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -63,7 +58,7 @@ public class adminUserList extends Application {
             userList.getItems().addAll(athletes);
         } catch (SQLException e) {
             e.printStackTrace();
-            // Vous pouvez également afficher un message d'erreur à l'utilisateur ici
+            Notification.showAlert("Erreur", "Erreur");
         }
 
         Menu.setupMenuAdmin(menuButton);

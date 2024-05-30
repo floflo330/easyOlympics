@@ -25,7 +25,6 @@ public class SportListCell extends ListCell<String> {
         content = new HBox(imageView, name);
         content.setSpacing(10);
 
-        // Définir les chemins d'image pour chaque discipline
         imagePaths = new HashMap<>();
 
         imagePaths.put("athlétisme", "/isep/fr/easyolympics/img/athlétisme.png");
@@ -34,7 +33,6 @@ public class SportListCell extends ListCell<String> {
         imagePaths.put("football", "/isep/fr/easyolympics/img/football.png");
         imagePaths.put("lutte", "/isep/fr/easyolympics/img/lutte.png");
         imagePaths.put("Natation Artistique", "/isep/fr/easyolympics/img/Natation Artistique.png");
-        // Ajoutez ici les autres disciplines avec leurs chemins d'image correspondants
     }
 
     @Override
@@ -45,7 +43,6 @@ public class SportListCell extends ListCell<String> {
             setGraphic(null);
         } else {
             name.setText(item);
-            // Charger l'image spécifique à la discipline si elle existe, sinon charger l'image par défaut
             String imagePath = imagePaths.getOrDefault(item.toLowerCase(), "/isep/fr/easyolympics/img/logojo.png");
             try {
                 InputStream imageStream = getClass().getResourceAsStream(imagePath);

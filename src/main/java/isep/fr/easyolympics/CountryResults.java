@@ -113,6 +113,8 @@ public class CountryResults extends Application {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            Notification.showAlert("Erreur", "Erreur");
+
         }
     }
 
@@ -134,6 +136,7 @@ public class CountryResults extends Application {
             System.out.println("CSV file generated successfully: " + csvFileName);
         } catch (java.io.IOException e) {
             throw new RuntimeException(e);
+
         }
     }
 

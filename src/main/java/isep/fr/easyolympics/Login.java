@@ -49,7 +49,6 @@ public class Login extends Application {
                 alert.setContentText("Bienvenue, " + user.getUsername() + "!");
                 alert.showAndWait();
 
-                // Passer à la page d'accueil
                 try {
                     Main.showHomeScene();
                 } catch (Exception e) {

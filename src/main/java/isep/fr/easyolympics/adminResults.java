@@ -165,7 +165,7 @@ public class adminResults implements Initializable {
                 showAlert("Succès", "Les résultats et les médailles ont été sauvegardés avec succès.");
             } catch (SQLException e) {
                 e.printStackTrace();
-                showAlert("Erreur", "Une erreur s'est produite lors de la sauvegarde des résultats et des médailles.");
+                showAlert("Erreur", "Une erreur s'est produite.");
             }
         }
     }

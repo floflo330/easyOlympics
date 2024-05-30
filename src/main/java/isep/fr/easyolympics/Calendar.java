@@ -88,21 +88,17 @@ public class Calendar {
     @FXML
     private void handleButtonClick(ActionEvent event, String date) {
         try {
-            // Load the Day.fxml view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Day.fxml"));
             Parent root = loader.load();
 
-            // Get the controller of Day.fxml
             Day dayController = loader.getController();
-            dayController.setDate(date); // Pass the date to the controller
+            dayController.setDate(date);
 
-            // Create a new scene with the loaded view
             Scene scene = new Scene(root);
 
             // Get the current stage
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
 
-            // Set the scene with Day.fxml
             stage.setScene(scene);
             stage.show();
         } catch (java.io.IOException e) {

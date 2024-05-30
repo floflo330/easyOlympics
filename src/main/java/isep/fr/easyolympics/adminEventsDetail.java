@@ -2,7 +2,7 @@ package isep.fr.easyolympics;
 
 import isep.fr.easyolympics.model.Event;
 import isep.fr.easyolympics.model.DatabaseQueries;
-import isep.fr.easyolympics.model.Athlete; // Importez votre classe Athlete
+import isep.fr.easyolympics.model.Athlete;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

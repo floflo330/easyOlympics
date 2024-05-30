@@ -41,7 +41,6 @@ public class Day {
     public void initialize() {
         Menu.setupMenu(menuButton);
 
-        // Initialize columns
         dateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDate()));
         timeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTime()));
         nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
@@ -49,7 +48,6 @@ public class Day {
         placeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getPlace()));
     }
 
-    // Method to set the date and load the corresponding events
     public void setDate(String date) {
         this.selectedDate = date;
         loadEventsForDate();
@@ -61,29 +59,23 @@ public class Day {
             eventsTable.setItems(FXCollections.observableArrayList(events));
         } catch (SQLException e) {
             e.printStackTrace();
-            // Optionally, show an error message to the user
         }
     }
 
     @FXML
     private void handleCalendarButtonClick(ActionEvent event) {
         try {
-            // Load the Day.fxml view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Day.fxml"));
             Parent root = loader.load();
 
-            // Create a new scene
             Scene scene = new Scene(root);
 
-            // Get the current stage
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
 
-            // Set the scene with Day.fxml
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle errors in loading Day.fxml view
         }
     }
 

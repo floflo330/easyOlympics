@@ -5,27 +5,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import isep.fr.easyolympics.model.DatabaseQueries;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-
-
 
 import java.net.URL;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class AddAthlete implements Initializable  {
+public class AddAthlete implements Initializable {
 
     @FXML
     private TextField emailField;
@@ -67,7 +55,6 @@ public class AddAthlete implements Initializable  {
             sportChoiceBox.getItems().addAll(sports);
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle error (e.g., show an error message to the user)
         }
 
         Menu.setupMenuAdmin(menuButton);
@@ -93,7 +80,6 @@ public class AddAthlete implements Initializable  {
             int idSport = DatabaseQueries.getSportIdByName(sport);
 
             DatabaseQueries.addAthlete(firstName, lastName, email, idCountry, birthDate, sex, idSport);
-            //System.out.println(birthDate);
             emailField.clear();
             lastNameField.clear();
             firstNameField.clear();
@@ -120,14 +106,13 @@ public class AddAthlete implements Initializable  {
     }
 
     @FXML
-    private void handleBackButton(){
+    private void handleBackButton() {
         try {
             Main.showAdminUserList();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
 
 }

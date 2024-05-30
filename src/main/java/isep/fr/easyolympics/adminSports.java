@@ -75,7 +75,7 @@ public class adminSports extends Application {
                 sportField.clear();
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Handle error (e.g., show an error message to the user)
+                Notification.showAlert("Erreur", "Erreur");
             }
         }
     }
@@ -88,7 +88,7 @@ public class adminSports extends Application {
                 sportsTable.getItems().remove(selectedSport);
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Handle error (e.g., show an error message to the user)
+                Notification.showAlert("Erreur", "Erreur");
             }
         }
     }

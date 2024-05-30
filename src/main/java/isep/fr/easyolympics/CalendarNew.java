@@ -69,12 +69,8 @@ public class CalendarNew {
             eventsTable.setItems(eventList);
         } catch (SQLException e) {
             e.printStackTrace();
-            // Afficher un message d'erreur à l'utilisateur
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur de chargement");
-            alert.setHeaderText("Impossible de charger les événements");
-            alert.setContentText("Une erreur est survenue lors du chargement des événements pour la date sélectionnée.");
-            alert.showAndWait();
+            Notification.showAlert("Erreur", "Erreur");
+
         }
     }
 }

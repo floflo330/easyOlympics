@@ -16,12 +16,11 @@ public class SportMatchesController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Initialisation du contrôleur
+
     }
 
     public void initData(String sport) {
         selectedSport = sport;
         sportLabel.setText("Matches for " + selectedSport);
-        // Charger les matches pour le sport sélectionné depuis la base de données et les afficher
     }
 }
