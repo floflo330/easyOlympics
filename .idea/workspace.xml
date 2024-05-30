@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42696686-371e-4d84-a2a8-de33b37aecdc" name="Changes" comment="Modif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/adminResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/model/DatabaseQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminResults.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/adminResults.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/SportListCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isep/fr/easyolympics/SportListCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isep/fr/easyolympics/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,45 +57,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.CountryResults.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.Home.executor": "Run",
-    "Application.Login.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.PDFGenerator.executor": "Run",
-    "Application.Signup.executor": "Run",
-    "Application.TestDatabaseConnection.executor": "Run",
-    "Application.adminUserList.executor": "Run",
-    "Application.isep.fr.easyolympics.controller.adminUserList.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/flore/IdeaProjects/easyOlympics/src/main/java/isep/fr/easyolympics",
-    "last_opened_file_path": "C:/Users/flore/IdeaProjects/easyOlympics/src/main/resources/isep/fr/easyolympics",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.CountryResults.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Home.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Login.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PDFGenerator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Signup.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestDatabaseConnection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.adminUserList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.isep.fr.easyolympics.controller.adminUserList.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/flore/IdeaProjects/easyOlympics/src/main/java/isep/fr/easyolympics&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/flore/IdeaProjects/easyOlympics/src/main/resources/isep/fr/easyolympics&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="isep.fr.easyolympics" />
@@ -260,9 +259,15 @@
       <workItem from="1716660750222" duration="60000" />
       <workItem from="1716660843416" duration="11701000" />
       <workItem from="1716912909357" duration="610000" />
-      <workItem from="1716927936003" duration="4588000" />
-      <workItem from="1716977115884" duration="1119000" />
-      <workItem from="1716992140844" duration="3215000" />
+      <workItem from="1716927936003" duration="3095000" />
+    </task>
+    <task id="LOCAL-00004" summary="Modification layout">
+      <option name="closed" value="true" />
+      <created>1713365326555</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713365326555</updated>
     </task>
     <task id="LOCAL-00005" summary="Added img">
       <option name="closed" value="true" />
@@ -648,15 +653,7 @@
       <option name="project" value="LOCAL" />
       <updated>1716931427626</updated>
     </task>
-    <task id="LOCAL-00053" summary="Modif">
-      <option name="closed" value="true" />
-      <created>1716932264153</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1716932264153</updated>
-    </task>
-    <option name="localTasksCounter" value="54" />
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

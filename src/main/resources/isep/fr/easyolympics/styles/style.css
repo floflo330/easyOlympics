@@ -48,7 +48,8 @@
     -fx-background-color:  #bf154e;
     -fx-background-radius: 12;
     -fx-cursor: hand;
-    -fx-text-fill: #fff;
+
+
 }
 
 .boutonCarre {
@@ -62,6 +63,7 @@
 -fx-font-size: 13;
 -fx-font-family: "Lemon Milk Regular";
 -fx-background-radius: 3;
+    -fx-opacity: 80%;
 }
 
 
@@ -90,6 +92,7 @@
     -fx-font-family: "Lemon Milk Regular";
     -fx-border-width: solid 1px;
     -fx-border-color: #4a4848;
+    -fx-opacity: 80%;
 
 }
 
@@ -129,6 +132,14 @@
 
 
 
+
+
+
+
+
+
+
+
 .list-cell {
     -fx-background-color: #f4f4f4;
     -fx-padding: 10px;
@@ -144,11 +155,26 @@
 
 .button-menu {
     -fx-background-color: #fff;
+    -fx-background-radius: 15;
     -fx-border-style: none;
-    -fx-text-fill: #000000;
+    -fx-font-size: 18px;
 }
 
 .list-view {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
+}
+
+/* styles.css */
+.chart-bar {
+    -fx-bar-fill: #ffcc00; /* Default color */
+}
+.default-color0.chart-bar {
+    -fx-bar-fill: #ffd700; /* Gold */
+}
+.default-color1.chart-bar {
+    -fx-bar-fill: #c0c0c0; /* Silver */
+}
+.default-color2.chart-bar {
+    -fx-bar-fill: #cd7f32; /* Bronze */
 }
