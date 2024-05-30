@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 public class DatabaseQueries {
-    // Méthode pour récupérer tous les utilisateurs
     public static List<User> getAllUsers() throws SQLException {
         List<User> users = new ArrayList<>();
         Connection conn = null;
@@ -30,7 +29,6 @@ public class DatabaseQueries {
                 String username = rs.getString("username");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
-                // Utilisez le constructeur de User pour créer un nouvel utilisateur
                 User user = new User(id, username, email, password);
                 users.add(user);
             }
@@ -44,7 +42,6 @@ public class DatabaseQueries {
     }
 
 
-    // Méthode pour récupérer un utilisateur par son identifiant
     public static User getUserById(int userId) throws SQLException {
         User user = null;
         Connection conn = null;
@@ -218,7 +215,7 @@ public class DatabaseQueries {
                     "JOIN sports s ON e.idSport = s.idSport " +
                     "WHERE e.date = ?";
             stmt = conn.prepareStatement(query);
-            stmt.setDate(1, java.sql.Date.valueOf(date)); // Convertir la date String en java.sql.Date
+            stmt.setDate(1, java.sql.Date.valueOf(date));
             rs = stmt.executeQuery();
 
             while (rs.next()) {
@@ -261,7 +258,6 @@ public class DatabaseQueries {
         }
     }
 
-    // Méthode pour récupérer tous les événements
     public static List<Event> getEvents() throws SQLException {
         Connection conn = null;
         Statement stmt = null;
@@ -297,7 +293,6 @@ public class DatabaseQueries {
         return events;
     }
 
-    // Méthode pour supprimer un événement
     public static void deleteEvent(int id) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -564,18 +559,14 @@ public class DatabaseQueries {
         PreparedStatement preparedStatement = null;
 
         try {
-            // Obtenir la connexion à la base de données
             connection = Database.getConnection();
 
-            // Préparer la requête SQL pour insérer l'athlète à l'événement dans la table events_athletes
             String query = "INSERT INTO events_athletes (idAthlete, idEvent) VALUES (?, ?)";
             preparedStatement = connection.prepareStatement(query);
 
-            // Remplir les paramètres de la requête avec l'ID de l'athlète et de l'événement
             preparedStatement.setInt(1, athleteId);
             preparedStatement.setInt(2, eventId);
 
-            // Exécuter la requête pour ajouter l'athlète à l'événement
             preparedStatement.executeUpdate();
         } finally {
             // Fermer les ressources
@@ -592,23 +583,18 @@ public class DatabaseQueries {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        int athleteId = -1; // Valeur par défaut si l'athlète n'est pas trouvé
+        int athleteId = -1;
 
         try {
-            // Obtenir la connexion à la base de données
             connection = Database.getConnection();
 
-            // Préparer la requête SQL pour obtenir l'ID de l'athlète par son nom
             String query = "SELECT idAthlete FROM athletes WHERE name = ?";
             preparedStatement = connection.prepareStatement(query);
 
-            // Remplir les paramètres de la requête avec le nom de l'athlète
             preparedStatement.setString(1, athleteName);
 
-            // Exécuter la requête pour obtenir l'ID de l'athlète
             resultSet = preparedStatement.executeQuery();
 
-            // Si un résultat est trouvé, récupérer l'ID de l'athlète
             if (resultSet.next()) {
                 athleteId = resultSet.getInt("idAthlete");
             }
@@ -635,20 +621,15 @@ public class DatabaseQueries {
         String countryName = null;
 
         try {
-            // Obtenir la connexion à la base de données
             connection = Database.getConnection();
 
-            // Préparer la requête SQL pour obtenir le nom du pays par son ID
             String query = "SELECT name FROM countries WHERE idCountry = ?";
             preparedStatement = connection.prepareStatement(query);
 
-            // Remplir les paramètres de la requête avec l'ID du pays
             preparedStatement.setInt(1, countryId);
 
-            // Exécuter la requête pour obtenir le nom du pays
             resultSet = preparedStatement.executeQuery();
 
-            // Si un résultat est trouvé, récupérer le nom du pays
             if (resultSet.next()) {
                 countryName = resultSet.getString("name");
             }
