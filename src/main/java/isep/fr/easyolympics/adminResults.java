@@ -78,7 +78,6 @@ public class adminResults implements Initializable {
             secondChoiceBox.setItems(athleteOptions);
             thirdChoiceBox.setItems(athleteOptions);
 
-            // Clear previous selections
             firstChoiceBox.getSelectionModel().clearSelection();
             secondChoiceBox.getSelectionModel().clearSelection();
             thirdChoiceBox.getSelectionModel().clearSelection();
@@ -88,7 +87,6 @@ public class adminResults implements Initializable {
     }
 
     private void setupChoiceBoxesListeners() {
-        // Ensure unique selections across all choice boxes
         firstChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 if (newValue.equals(secondChoiceBox.getValue())) {
@@ -122,7 +120,6 @@ public class adminResults implements Initializable {
             }
         });
     }
-
     @FXML
     private void handleSaveButton() {
         String selectedEvent = eventChoiceBox.getValue();
@@ -143,23 +140,33 @@ public class adminResults implements Initializable {
             return;
         }
 
-        try {
-            DatabaseQueries.saveResult(firstAthlete, selectedEvent, firstScore, firstTime);
-            DatabaseQueries.saveResult(secondAthlete, selectedEvent, secondScore, secondTime);
-            if (thirdAthlete != null) {
-                DatabaseQueries.saveResult(thirdAthlete, selectedEvent, thirdScore, thirdTime);
-            }
+        String confirmationMessage = String.format(
+                "Événement: %s\n\n1er:\nAthlète: %s\nTemps: %s\nScore: %s\n\n2ème:\nAthlète: %s\nTemps: %s\nScore: %s\n\n3ème:\nAthlète: %s\nTemps: %s\nScore: %s",
+                selectedEvent, firstAthlete, firstTime, firstScore,
+                secondAthlete, secondTime, secondScore,
+                thirdAthlete, thirdTime, thirdScore
+        );
 
-            DatabaseQueries.addMedal("Gold", firstAthlete, selectedEvent);
-            DatabaseQueries.addMedal("Silver", secondAthlete, selectedEvent);
-            if (thirdAthlete != null) {
-                DatabaseQueries.addMedal("Bronze", thirdAthlete, selectedEvent);
-            }
+        boolean confirm = showConfirmationAlert("Confirmer les résultats saisis", confirmationMessage);
+        if (confirm) {
+            try {
+                DatabaseQueries.saveResult(firstAthlete, selectedEvent, firstScore, firstTime);
+                DatabaseQueries.saveResult(secondAthlete, selectedEvent, secondScore, secondTime);
+                if (thirdAthlete != null) {
+                    DatabaseQueries.saveResult(thirdAthlete, selectedEvent, thirdScore, thirdTime);
+                }
 
-            showAlert("Succès", "Les résultats et les médailles ont été sauvegardés avec succès.");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            showAlert("Erreur", "Une erreur s'est produite lors de la sauvegarde des résultats et des médailles.");
+                DatabaseQueries.addMedal("Gold", firstAthlete, selectedEvent);
+                DatabaseQueries.addMedal("Silver", secondAthlete, selectedEvent);
+                if (thirdAthlete != null) {
+                    DatabaseQueries.addMedal("Bronze", thirdAthlete, selectedEvent);
+                }
+
+                showAlert("Succès", "Les résultats et les médailles ont été sauvegardés avec succès.");
+            } catch (SQLException e) {
+                e.printStackTrace();
+                showAlert("Erreur", "Une erreur s'est produite lors de la sauvegarde des résultats et des médailles.");
+            }
         }
     }
 
@@ -169,6 +176,21 @@ public class adminResults implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    private boolean showConfirmationAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+
+        ButtonType buttonTypeYes = new ButtonType("Confirmer");
+        ButtonType buttonTypeNo = new ButtonType("Annuler", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+
+        alert.showAndWait();
+        return alert.getResult() == buttonTypeYes;
     }
 }
 

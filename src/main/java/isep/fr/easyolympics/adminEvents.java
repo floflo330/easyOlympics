@@ -84,7 +84,6 @@ public class adminEvents extends Application {
         Menu.setupMenuAdmin(menuButton);
 
 
-        // Initialiser les colonnes du tableau
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -94,13 +93,10 @@ public class adminEvents extends Application {
         hourSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 23, 0));
         minuteSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 59, 0));
 
-        // Charger les événements dans le tableau
         loadEvents();
         loadSports();
-        // Ajouter un événement
         addButton.setOnAction(event -> addEvent());
 
-        // Supprimer l'événement sélectionné
         deleteButton.setOnAction(event -> deleteEvent());
 
 
@@ -150,10 +146,10 @@ public class adminEvents extends Application {
 
             Event newEvent = new Event(0, name, place, date, time, idSport, sportName);
             DatabaseQueries.addEvent(newEvent);
-            loadEvents(); // Recharger les événements
+            loadEvents();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Afficher un message d'erreur à l'utilisateur
+            Notification.showAlert("Erreur", "Erreur !");
         }
     }
 
@@ -162,10 +158,10 @@ public class adminEvents extends Application {
         if (selectedEvent != null) {
             try {
                 DatabaseQueries.deleteEvent(selectedEvent.getIdEvent());
-                loadEvents(); // Recharger les événements
+                loadEvents();
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Afficher un message d'erreur à l'utilisateur
+                Notification.showAlert("Erreur", "Erreur !");
             }
         }
     }
@@ -177,16 +173,17 @@ public class adminEvents extends Application {
             try {
                 DatabaseQueries.deleteEvent(selectedEvent.getIdEvent());
 
-                // Mettre à jour la table des événements
                 List<Event> events = DatabaseQueries.getEvents();
                 ObservableList<Event> eventList = FXCollections.observableArrayList(events);
                 eventsTable.setItems(eventList);
 
+
             } catch (SQLException e) {
                 e.printStackTrace();
+                Notification.showAlert("Erreur", "Erreur !");
+
             }
         } else {
-            // Avertir l'utilisateur qu'aucun événement n'est sélectionné
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Aucune sélection");
             alert.setHeaderText("Aucun événement sélectionné");
@@ -198,7 +195,7 @@ public class adminEvents extends Application {
     @FXML
     private void handleAddEvent() {
         try {
-            int id = 0; // Si votre ID est généré automatiquement, vous pouvez ignorer ceci
+            int id = 0;
             String name = nameField.getText();
             String place = placeField.getText();
             String date = datePicker.getValue().toString();
@@ -209,13 +206,15 @@ public class adminEvents extends Application {
             Event newEvent = new Event(id, name, place, date, time, idSport, sportName);
             DatabaseQueries.addEvent(newEvent);
 
-            // Mettre à jour la table des événements
             List<Event> events = DatabaseQueries.getEvents();
             ObservableList<Event> eventList = FXCollections.observableArrayList(events);
             eventsTable.setItems(eventList);
 
+
         } catch (SQLException e) {
             e.printStackTrace();
+            Notification.showAlert("Erreur", "Erreur !");
+
         }
     }
 

@@ -94,7 +94,6 @@ public class AddAthlete implements Initializable  {
 
             DatabaseQueries.addAthlete(firstName, lastName, email, idCountry, birthDate, sex, idSport);
             //System.out.println(birthDate);
-            // Clear the fields after successful addition
             emailField.clear();
             lastNameField.clear();
             firstNameField.clear();
@@ -103,14 +102,20 @@ public class AddAthlete implements Initializable  {
             sportChoiceBox.setValue(null);
             maleRadioButton.setSelected(false);
             femaleRadioButton.setSelected(false);
+            Notification.showAlert("Succès", "Athlète ajouté avec succès !");
+
             try {
                 Main.showAdminUserList();
             } catch (Exception e) {
                 e.printStackTrace();
+                Notification.showAlert("Erreur", "Erreur");
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle error (e.g., show an error message to the user)
+            Notification.showAlert("Erreur", "Erreur");
+
+
         }
     }
 

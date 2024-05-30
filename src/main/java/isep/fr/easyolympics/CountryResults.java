@@ -20,6 +20,9 @@ import java.io.FileWriter;
 import java.sql.SQLException;
 import java.util.Map;
 
+
+// Resultats par pays, avec un graphique des médailles
+
 public class CountryResults extends Application {
     public static void main(String[] args) {
         launch(args);
@@ -63,7 +66,6 @@ public class CountryResults extends Application {
         primaryStage.setScene(new Scene(loader.load(), 1200, 800));
         primaryStage.show();
 
-        // Call the initialize method to display the data
         initialize();
     }
 
@@ -77,10 +79,8 @@ public class CountryResults extends Application {
             bronzeColumn.setCellValueFactory(new PropertyValueFactory<>("bronze"));
             totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
 
-            // Retrieve medal data from the database
             Map<String, Map<String, Integer>> medalsByCountry = DatabaseQueries.getMedalsByCountries();
 
-            // Add medal data to the TableView
             ObservableList<CountryMedals> countryMedalsList = FXCollections.observableArrayList();
             for (String country : medalsByCountry.keySet()) {
                 Map<String, Integer> medals = medalsByCountry.get(country);
@@ -90,8 +90,7 @@ public class CountryResults extends Application {
                 int total = gold + silver + bronze;
                 countryMedalsList.add(new CountryMedals(country, gold, silver, bronze, total));
 
-                // Debug log
-                System.out.println("Country: " + country + ", Gold: " + gold + ", Silver: " + silver + ", Bronze: " + bronze + ", Total: " + total);
+                //System.out.println("Country: " + country + ", Gold: " + gold + ", Silver: " + silver + ", Bronze: " + bronze + ", Total: " + total);
             }
             tableView.setItems(countryMedalsList);
 

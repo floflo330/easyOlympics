@@ -1,20 +1,20 @@
 package isep.fr.easyolympics;
 
-import isep.fr.easyolympics.model.Event;
+import isep.fr.easyolympics.model.Athlete;
 import isep.fr.easyolympics.model.DatabaseQueries;
-import isep.fr.easyolympics.model.Athlete; // Importez votre classe Athlete
+import isep.fr.easyolympics.model.Event;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
-public class adminEventsDetail {
+public class EventsDetail {
     @FXML
     private TableView<Athlete> athletesTable;
 

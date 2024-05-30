@@ -548,7 +548,7 @@ public class DatabaseQueries {
     // Method to save result
     public static void saveResult(String athleteName, String eventName, String score, String time) throws SQLException {
         Connection connection = Database.getConnection();
-        String query = "INSERT INTO results (idAthlete, idEvent, score, time) VALUES ((SELECT idAthlete FROM athletes WHERE name = ?), (SELECT idEvent FROM events WHERE name = ?), ?, ?)";
+        String query = "INSERT INTO results (idAthlete, idEvent, score, time) VALUES ((SELECT idAthlete FROM athletes WHERE name = ?), (SELECT idEvent FROM events WHERE name = ?), ?, ?) LIMIT 1";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, athleteName);
             preparedStatement.setString(2, eventName);

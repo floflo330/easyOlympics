@@ -60,7 +60,7 @@ public class adminCountries extends Application {
             countryTable.getItems().addAll(countries);
         } catch (SQLException e) {
             e.printStackTrace();
-            // Vous pouvez également afficher un message d'erreur à l'utilisateur ici
+            Notification.showAlert("Erreur", "Erreur !");
         }
 
         Menu.setupMenuAdmin(menuButton);
@@ -76,7 +76,7 @@ public class adminCountries extends Application {
                 countryField.clear();
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Handle error (e.g., show an error message to the user)
+                Notification.showAlert("Erreur", "Erreur !");
             }
         }
     }
@@ -87,9 +87,11 @@ public class adminCountries extends Application {
             try {
                 DatabaseQueries.deleteCountry(selectedCountry);
                 countryTable.getItems().remove(selectedCountry);
+                Notification.showAlert("Succès", "Pays supprimé avec succès !");
+
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Handle error (e.g., show an error message to the user)
+                Notification.showAlert("Erreur", "Erreur !");
             }
         }
     }

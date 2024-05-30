@@ -53,8 +53,8 @@
                 <TableColumn fx:id="totalColumn" prefWidth="150.0" text="Total de médailles" />
               </columns>
             </TableView>
-            <Button layoutX="992.0" layoutY="294.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="150.0" text="Récupérer CSV" onAction="#generateCsv" />
-            <Text layoutX="952.0" layoutY="248.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" styleClass="title" text="Récupérer les données du tableau" textAlignment="CENTER" wrappingWidth="230.0">
+            <Button layoutX="992.0" layoutY="294.0" mnemonicParsing="false" onAction="#generateCsv" prefHeight="29.0" prefWidth="150.0" text="Générer CSV" />
+            <Text layoutX="952.0" layoutY="248.0" lineSpacing="2.0" stroke="#ff1414" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" styleClass="title" text="Récuper les médailles par pays" textAlignment="CENTER" wrappingWidth="230.0">
                <font>
                   <Font name="LEMON MILK Regular" size="39.0" />
                </font>

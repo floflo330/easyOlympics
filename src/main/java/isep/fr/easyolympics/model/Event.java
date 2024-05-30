@@ -2,6 +2,10 @@ package isep.fr.easyolympics.model;
 
 import java.sql.Date;
 
+
+
+
+
 public class Event {
     private int idEvent;
     private String name;
@@ -9,7 +13,7 @@ public class Event {
     private String date;
     private String time;
     private int idSport;
-    private String sportName; // Ajouter cet attribut
+    private String sportName;
 
     public Event(int idEvent, String name, String place, String date, String time, int idSport, String sportName) {
         this.idEvent = idEvent;
@@ -18,13 +22,12 @@ public class Event {
         this.date = date;
         this.time = time;
         this.idSport = idSport;
-        this.sportName = sportName; // Initialiser l'attribut
+        this.sportName = sportName;
     }
 
     public Event(Date eventDate, String eventTime, String eventName, String eventSport, String eventPlace) {
     }
 
-    // Getters et setters pour tous les attributs
     public int getIdEvent() {
         return idEvent;
     }

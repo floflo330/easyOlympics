@@ -16,6 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Main.primaryStage = primaryStage;
         showHomeScene();
+        // Decommenter pour séléctionner la page de démarrage
         //showAthletes();
         //showAdminUserList();
         //showAdminEvents();
@@ -25,8 +26,6 @@ public class Main extends Application {
         //showAdminHome();
     }
 
-
-
     public static void showAthletes() throws Exception {
         Parent root = FXMLLoader.load(Main.class.getResource("Athletes.fxml"));
         Scene scene = new Scene(root);
@@ -35,9 +34,6 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("img/logojo.png")));
         primaryStage.show();
     }
-
-
-
 
 
     public static void showLoginScene() throws Exception {
