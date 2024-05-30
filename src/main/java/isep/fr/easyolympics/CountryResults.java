@@ -67,7 +67,6 @@ public class CountryResults extends Application {
     public void initialize() {
         Menu.setupMenu(menuButton);
         try {
-            // Set up the columns in the table
             countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
             goldColumn.setCellValueFactory(new PropertyValueFactory<>("gold"));
             silverColumn.setCellValueFactory(new PropertyValueFactory<>("silver"));
@@ -99,7 +98,7 @@ public class CountryResults extends Application {
             seriesSilver.setName("Silver");
             XYChart.Series<String, Number> seriesBronze = new XYChart.Series<>();
             seriesBronze.setName("Bronze");
-
+            
             for (CountryMedals cm : countryMedalsList) {
                 seriesGold.getData().add(new XYChart.Data<>(cm.getCountry(), cm.getGold()));
                 seriesSilver.getData().add(new XYChart.Data<>(cm.getCountry(), cm.getSilver()));
@@ -107,6 +106,8 @@ public class CountryResults extends Application {
             }
 
             barChart.getData().addAll(seriesGold, seriesSilver, seriesBronze);
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
