@@ -9,9 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -29,8 +26,10 @@ public class Home implements Initializable {
     private ListView<String> userList1;
     @FXML
     private TextField searchField;
-    private ContextMenu contextMenu;
+    @FXML
+    private TextField searchField1;
     private FilteredList<String> filteredData;
+    private FilteredList<String> filteredData1;
     @FXML
     private TableView<Event> eventsTable;
     @FXML
@@ -44,20 +43,13 @@ public class Home implements Initializable {
     @FXML
     private TableColumn<Event, String> placeColumn;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //initializeContextMenu();
         Menu.setupMenu(menuButton);
         loadAthletesFromDatabase();
-        configureSearchField();
-        try {
-            List<String> sports = DatabaseQueries.getCountries();
-            ObservableList<String> sportsList = FXCollections.observableArrayList(sports);
-            userList1.setItems(sportsList);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        loadCountriesFromDatabase();
+        configureSearchFields();
+
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -70,40 +62,49 @@ public class Home implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-    }
-
-    private MenuItem createMenuItem(String text, Runnable action) {
-        MenuItem menuItem = new MenuItem(text);
-        menuItem.setOnAction(event -> action.run());
-        return menuItem;
     }
 
     private void loadAthletesFromDatabase() {
         try {
             List<String> athletes = DatabaseQueries.getSports();
-            // Trier les disciplines dans l'ordre alphabétique
             Collections.sort(athletes);
             filteredData = new FilteredList<>(FXCollections.observableArrayList(athletes), p -> true);
             userList.setItems(filteredData);
-            userList.setCellFactory(listView -> new SportListCell());  // Utilise la cellule personnalisée
+            userList.setCellFactory(listView -> new SportListCell());
         } catch (SQLException e) {
             e.printStackTrace();
-            // Optionally, display an error message to the user
         }
     }
 
+    private void loadCountriesFromDatabase() {
+        try {
+            List<String> countries = DatabaseQueries.getCountries();
+            Collections.sort(countries);
+            filteredData1 = new FilteredList<>(FXCollections.observableArrayList(countries), p -> true);
+            userList1.setItems(filteredData1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-    private void configureSearchField() {
+    private void configureSearchFields() {
         searchField.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(sport -> {
-                // Si le champ de recherche est vide, afficher tous les sports
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
                 }
-                // Comparer le nom du sport avec le texte de la recherche
                 String lowerCaseFilter = newValue.toLowerCase();
                 return sport.toLowerCase().contains(lowerCaseFilter);
+            });
+        });
+
+        searchField1.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData1.setPredicate(country -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                return country.toLowerCase().contains(lowerCaseFilter);
             });
         });
     }
