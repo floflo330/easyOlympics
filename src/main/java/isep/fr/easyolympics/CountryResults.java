@@ -16,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.FileWriter;
 import java.sql.SQLException;
 import java.util.Map;
 
@@ -49,6 +50,9 @@ public class CountryResults extends Application {
 
     @FXML
     private TableColumn<CountryMedals, Integer> totalColumn;
+
+    @FXML
+    private Button downloadCsvButton;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -112,6 +116,28 @@ public class CountryResults extends Application {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void generateCsv() {
+        String csvFileName = "country_medals.csv";
+
+        try (FileWriter csvWriter = new FileWriter(csvFileName)) {
+            csvWriter.append("Country,Gold,Silver,Bronze,Total\n");
+
+            for (CountryMedals cm : tableView.getItems()) {
+                csvWriter.append(cm.getCountry()).append(",")
+                        .append(String.valueOf(cm.getGold())).append(",")
+                        .append(String.valueOf(cm.getSilver())).append(",")
+                        .append(String.valueOf(cm.getBronze())).append(",")
+                        .append(String.valueOf(cm.getTotal())).append("\n");
+            }
+
+            System.out.println("CSV file generated successfully: " + csvFileName);
+        } catch (java.io.IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public static class CountryMedals {
         private String country;
